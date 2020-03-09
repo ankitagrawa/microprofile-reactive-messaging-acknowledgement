@@ -1,0 +1,32 @@
+Launching defaultServer (Open Liberty 20.0.0.2/wlp-1.0.37.cl200220200204-1746) on OpenJDK 64-Bit Server VM, version 11.0.5+10 (en_CA)
+[AUDIT   ] CWWKE0001I: The server defaultServer has been launched.
+[AUDIT   ] CWWKG0093A: Processing configuration drop-ins resource: /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/configDropins/overrides/liberty-plugin-variable-config.xml
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.ibm.ws.util.ThreadContextAccessor (file:/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/lib/com.ibm.ws.container.service_1.0.37.jar) to field java.lang.Thread.contextClassLoader
+WARNING: Please consider reporting this to the maintainers of com.ibm.ws.util.ThreadContextAccessor
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications.
+[err] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[err] SLF4J: Defaulting to no-operation (NOP) logger implementation
+[err] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[AUDIT   ] CWWKZ0001I: Application kitchen started in 2.226 seconds.
+[AUDIT   ] CWWKF0012I: The server installed the following features: [cdi-2.0, concurrent-1.0, jaxrs-2.1, jaxrsClient-2.1, jndi-1.0, jsonb-1.0, jsonp-1.1, mpConfig-1.3, mpReactiveMessaging-1.0, mpReactiveStreams-1.0, servlet-4.0].
+[AUDIT   ] CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 4.244 seconds.
+1
+2
+
+ New Food Order received 
+ Order : {"item":"burger3","orderID":"0007","status":"NEW","tableID":"3","type":"FOOD"}
+ Food Order in Progress... 
+ Order : {"item":"burger3","orderID":"0007","status":"IN_PROGRESS","tableID":"3","type":"FOOD"}
+ Food Order Ready... 
+ Order : {"item":"burger3","orderID":"0007","status":"READY","tableID":"3","type":"FOOD"}
+[AUDIT   ] CWWKE0055I: Server shutdown requested on Monday, March 2, 2020 at 2:05 p.m.. The server defaultServer is shutting down.
+[AUDIT   ] CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[WARNING ] CWWKE1102W: The quiesce operation did not complete. The server will now stop.
+[WARNING ] CWWKE1107W: 1 threads did not complete during the quiesce period. 
+[AUDIT   ] CWWKZ0009I: The application kitchen has stopped successfully.
+[AUDIT   ] CWWKE0036I: The server defaultServer stopped after 2 minutes, 21.449 seconds.

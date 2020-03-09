@@ -1,0 +1,5 @@
+io/openliberty/guides/restaurantbff/RestaurantBFFApplication.class
+io/openliberty/guides/restaurantbff/RestaurantBFFOrderResource.class
+io/openliberty/guides/restaurantbff/client/OrderClient.class
+io/openliberty/guides/restaurantbff/RestaurantBFFServingWindowResource.class
+io/openliberty/guides/restaurantbff/client/ServingWindowClient.class

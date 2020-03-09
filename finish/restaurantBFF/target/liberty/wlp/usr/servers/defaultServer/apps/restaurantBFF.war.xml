@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+    <dir sourceOnDisk="/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/src/main/webapp" targetInArchive="/"/>
+    <dir sourceOnDisk="/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/classes" targetInArchive="/WEB-INF/classes"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/javax/enterprise/cdi-api/2.0/cdi-api-2.0.jar" targetInArchive="/WEB-INF/lib/cdi-api-2.0.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/javax/el/javax.el-api/3.0.0/javax.el-api-3.0.0.jar" targetInArchive="/WEB-INF/lib/javax.el-api-3.0.0.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/javax/interceptor/javax.interceptor-api/1.2/javax.interceptor-api-1.2.jar" targetInArchive="/WEB-INF/lib/javax.interceptor-api-1.2.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar" targetInArchive="/WEB-INF/lib/javax.inject-1.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/javax/json/javax.json-api/1.1/javax.json-api-1.1.jar" targetInArchive="/WEB-INF/lib/javax.json-api-1.1.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/io/openliberty/guides/models/1.0-SNAPSHOT/models-1.0-SNAPSHOT.jar" targetInArchive="/WEB-INF/lib/models-1.0-SNAPSHOT.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar" targetInArchive="/WEB-INF/lib/validation-api-2.0.1.Final.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/javax/json/bind/javax.json.bind-api/1.0/javax.json.bind-api-1.0.jar" targetInArchive="/WEB-INF/lib/javax.json.bind-api-1.0.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/org/eclipse/yasson/1.0/yasson-1.0.jar" targetInArchive="/WEB-INF/lib/yasson-1.0.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/.m2/repository/org/glassfish/javax.json/1.1/javax.json-1.1.jar" targetInArchive="/WEB-INF/lib/javax.json-1.1.jar"/>
+    <file sourceOnDisk="/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/tmp/META-INF/MANIFEST.MF" targetInArchive="/META-INF/MANIFEST.MF"/>
+</archive>

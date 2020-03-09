@@ -1,0 +1,621 @@
+********************************************************************************
+product = Open Liberty 20.0.0.2 (wlp-1.0.37.cl200220200204-1746)
+wlp.install.dir = /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/
+java.home = /Library/Java/JavaVirtualMachines/adoptopenjdk-13-openj9.jdk/Contents/Home
+java.version = 13.0.1
+java.runtime = OpenJDK Runtime Environment (13.0.1+9)
+os = Mac OS X (10.15.1; x86_64) (en_CA)
+process = 83940@ankits-mbp.war.can.ibm.com
+********************************************************************************
+[2020-03-05, 14:58:03:852 EST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[2020-03-05, 14:58:04:338 EST] 00000030 com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/configDropins/overrides/liberty-plugin-variable-config.xml
+[2020-03-05, 14:58:04:504 EST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 0.861 seconds
+[2020-03-05, 14:58:04:529 EST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[2020-03-05, 14:58:04:751 EST] 00000030 .apache.cxf.cxf.core.3.2:1.0.37.cl200220200204-1746(id=146)] I Aries Blueprint packages not available. So namespaces will not be registered
+[2020-03-05, 14:58:04:770 EST] 0000002d com.ibm.ws.annocache.service                                 I OSGi Work Path [ /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/workarea/org.eclipse.osgi/41/data ]
+[2020-03-05, 14:58:04:805 EST] 00000030 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications.
+[2020-03-05, 14:58:05:124 EST] 00000040 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 14:58:05:125 EST] 00000040 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 14:58:05:773 EST] 00000040 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[2020-03-05, 14:58:05:785 EST] 00000040 org.jboss.weld.Version                                       I WELD-000900: 3.1.1 (Final)
+[2020-03-05, 14:58:07:430 EST] 00000040 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 14:58:07:430 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 14:58:07:434 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 14:58:07:448 EST] 00000040 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 14:58:07:448 EST] 00000040 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 14:58:07:449 EST] 00000040 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 14:58:07:551 EST] 00000040 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 14:58:07:551 EST] 00000040 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 14:58:07:552 EST] 00000040 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 14:58:07:752 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 14:58:07:828 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 14:58:07:828 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 14:58:07:829 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@12456704)
+[2020-03-05, 14:58:07:831 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 14:58:07:832 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 14:58:07:851 EST] 00000040 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 14:58:07:855 EST] 00000040 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 14:58:07:861 EST] 00000040 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 14:58:07:864 EST] 00000040 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application kitchen started in 2.740 seconds.
+[2020-03-05, 14:58:07:871 EST] 0000003f com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 14:58:07:875 EST] 0000003f com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 14:58:07:878 EST] 00000038 com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host *  (IPv6) port 9083.
+[2020-03-05, 14:58:07:994 EST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [cdi-2.0, concurrent-1.0, jaxrs-2.1, jaxrsClient-2.1, jndi-1.0, jsonb-1.0, jsonp-1.1, mpConfig-1.3, mpReactiveMessaging-1.0, mpReactiveStreams-1.0, servlet-4.0].
+[2020-03-05, 14:58:07:995 EST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 3.491 seconds.
+[2020-03-05, 14:58:07:995 EST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 4.353 seconds.
+[2020-03-05, 14:58:07:998 EST] 0000005b com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 14:58:08:177 EST] 0000005f SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 14:58:08:177 EST] 0000005f SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 14:58:28:235 EST] 00000072 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 14:58:28:248 EST] 00000072 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 14:58:28:263 EST] 00000072 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 14:58:28:264 EST] 00000072 SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 14:58:48:248 EST] 0000003a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 14:58:48:249 EST] 0000003a SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 14:58:48:265 EST] 00000072 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 14:58:48:266 EST] 00000072 SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 14:58:48:267 EST] 00000072 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 14:58:48:267 EST] 00000072 SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 14:59:08:267 EST] 0000003a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 14:59:08:268 EST] 00000072 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 14:59:08:269 EST] 0000003a SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 14:59:08:269 EST] 00000072 SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 14:59:28:270 EST] 0000003a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 14:59:28:271 EST] 0000003a SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:05:875 EST] 0000004e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:00:05:881 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:00:05:947 EST] 0000004e com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:00:05:956 EST] 0000004e com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:00:05:956 EST] 0000004e bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:00:06:077 EST] 00000048 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:00:07:160 EST] 0000004e lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:00:07:161 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:00:07:161 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:00:07:163 EST] 0000004e io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:00:07:164 EST] 0000004e io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:00:07:164 EST] 0000004e io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:00:07:218 EST] 0000004e SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:00:07:219 EST] 0000004e SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:00:07:219 EST] 0000004e SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:00:07:340 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:00:07:360 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:00:07:361 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:00:07:361 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@3a434297)
+[2020-03-05, 15:00:07:361 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:00:07:362 EST] 0000004e io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:00:07:375 EST] 0000004e com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:00:07:375 EST] 0000004e com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:00:07:376 EST] 0000004e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:00:07:377 EST] 0000004e com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 1.421 seconds.
+[2020-03-05, 15:00:07:377 EST] 00000040 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:00:07:377 EST] 00000040 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:00:07:406 EST] 00000058 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:00:07:622 EST] 00000038 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:00:07:623 EST] 00000038 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:08:513 EST] 00000047 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:00:08:515 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:00:08:543 EST] 00000058 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:00:08:549 EST] 00000047 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:00:08:558 EST] 00000047 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:00:08:558 EST] 00000047 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:00:09:655 EST] 00000047 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:00:09:656 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:00:09:656 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:00:09:659 EST] 00000047 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:00:09:660 EST] 00000047 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:00:09:661 EST] 00000047 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:00:09:726 EST] 00000047 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:00:09:726 EST] 00000047 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:00:09:726 EST] 00000047 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:00:09:867 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:00:09:885 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:00:09:886 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:00:09:886 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@73fc13dc)
+[2020-03-05, 15:00:09:886 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:00:09:887 EST] 00000047 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:00:09:900 EST] 00000047 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:00:09:901 EST] 00000047 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:00:09:901 EST] 00000047 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:00:09:902 EST] 00000040 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:00:09:903 EST] 00000047 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 1.344 seconds.
+[2020-03-05, 15:00:09:903 EST] 00000040 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:00:09:935 EST] 0000005f com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:00:10:146 EST] 00000057 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:00:10:147 EST] 00000057 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:17:674 EST] 00000038 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:00:17:675 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:00:17:702 EST] 0000005c com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:00:17:712 EST] 00000038 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:00:17:719 EST] 00000038 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:00:17:720 EST] 00000038 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:00:18:696 EST] 00000038 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:00:18:697 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:00:18:698 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:00:18:700 EST] 00000038 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:00:18:700 EST] 00000038 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:00:18:701 EST] 00000038 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:00:18:766 EST] 00000038 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:00:18:766 EST] 00000038 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:00:18:766 EST] 00000038 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:00:18:914 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:00:18:936 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:00:18:937 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:00:18:937 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@b44e076b)
+[2020-03-05, 15:00:18:938 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:00:18:938 EST] 00000038 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:00:18:959 EST] 00000038 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:00:18:960 EST] 00000038 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:00:18:960 EST] 00000038 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:00:18:961 EST] 00000053 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:00:18:962 EST] 00000038 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 1.242 seconds.
+[2020-03-05, 15:00:18:962 EST] 00000053 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:00:18:996 EST] 00000055 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:00:19:216 EST] 0000004c SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:00:19:216 EST] 0000004c SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:19:743 EST] 000000b1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:00:19:745 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:00:19:769 EST] 000000b2 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:00:19:777 EST] 000000b1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:00:19:786 EST] 000000b1 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:00:19:786 EST] 000000b1 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:00:20:597 EST] 000000b1 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:00:20:597 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:00:20:598 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:00:20:599 EST] 000000b1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:00:20:600 EST] 000000b1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:00:20:600 EST] 000000b1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:00:20:648 EST] 000000b1 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:00:20:648 EST] 000000b1 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:00:20:648 EST] 000000b1 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:00:20:776 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:00:20:794 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:00:20:795 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:00:20:795 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@27882e32)
+[2020-03-05, 15:00:20:795 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:00:20:795 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:00:20:810 EST] 000000b1 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:00:20:810 EST] 000000b1 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:00:20:811 EST] 000000b1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:00:20:812 EST] 000000b1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 1.026 seconds.
+[2020-03-05, 15:00:20:812 EST] 0000004c com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:00:20:813 EST] 0000004c com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:00:20:839 EST] 00000051 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:00:21:001 EST] 000000b2 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:00:21:002 EST] 000000b2 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:27:629 EST] 00000085 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:00:27:632 EST] 00000085 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:30:153 EST] 00000098 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:00:30:157 EST] 00000098 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:39:222 EST] 000000ab SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:00:39:225 EST] 000000ab SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:41:006 EST] 000000ce SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:00:41:010 EST] 000000ce SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:41:024 EST] 000000ce SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:00:41:024 EST] 000000ce SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:47:634 EST] 0000005a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:00:47:635 EST] 0000005a SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:50:158 EST] 0000004f SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:00:50:159 EST] 0000004f SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:00:59:226 EST] 0000003f SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:00:59:227 EST] 0000003f SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:01:01:010 EST] 00000043 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:01:01:012 EST] 00000043 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:01:01:025 EST] 000000ce SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:01:01:026 EST] 000000ce SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:01:01:027 EST] 000000ce SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:01:01:027 EST] 000000ce SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:01:21:027 EST] 00000043 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:01:21:028 EST] 00000043 SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:01:21:028 EST] 000000ce SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:01:21:029 EST] 000000ce SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:01:41:030 EST] 00000043 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:01:41:031 EST] 00000043 SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:02:06:041 EST] 0000004b SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:02:06:041 EST] 0000004b SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:02:26:042 EST] 000000ce SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:02:26:043 EST] 000000ce SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:02:26:044 EST] 000000ce SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:02:26:045 EST] 000000ce SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:02:26:062 EST] 000000ce io.openliberty.guides.kitchen.KitchenResource#initFoodOrder  E The method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder has thrown an exception
+io.smallrye.reactive.messaging.ProcessingException: Exception thrown when calling the method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+	at io.smallrye.reactive.messaging.AbstractMediator.lambda$initialize$0(AbstractMediator.java:50)
+	at io.smallrye.reactive.messaging.AbstractMediator$$Lambda$356.0000000000000000.invoke(Unknown Source)
+	at io.smallrye.reactive.messaging.AbstractMediator.invoke(AbstractMediator.java:61)
+	at io.smallrye.reactive.messaging.ProcessorMediator.lambda$processMethodReturningACompletionStageOfMessageAndConsumingIndividualMessage$16(ProcessorMediator.java:262)
+	at io.smallrye.reactive.messaging.ProcessorMediator$$Lambda$1421.0000000000000000.apply(Unknown Source)
+	at io.smallrye.reactive.streams.stages.FlatMapCompletionStageFactory$FlatMapCompletionStage.lambda$apply$0(FlatMapCompletionStageFactory.java:47)
+	at io.smallrye.reactive.streams.stages.FlatMapCompletionStageFactory$FlatMapCompletionStage$$Lambda$366.0000000000000000.apply(Unknown Source)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.onNext(FlowableFlatMap.java:132)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.drainLoop(FlowableFlatMap.java:501)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.drain(FlowableFlatMap.java:366)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.request(FlowableFlatMap.java:345)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.drainLoop(FlowableFlatMap.java:546)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.drain(FlowableFlatMap.java:366)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$InnerSubscriber.onComplete(FlowableFlatMap.java:678)
+	at io.reactivex.internal.subscriptions.DeferredScalarSubscription.complete(DeferredScalarSubscription.java:119)
+	at io.reactivex.processors.AsyncProcessor.onComplete(AsyncProcessor.java:201)
+	at io.smallrye.reactive.streams.utils.CompletionStageToPublisher.lambda$fromCompletionStage$0(CompletionStageToPublisher.java:23)
+	at io.smallrye.reactive.streams.utils.CompletionStageToPublisher$$Lambda$520.0000000000000000.accept(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:859)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:837)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1776)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor589.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at io.smallrye.reactive.messaging.AbstractMediator.lambda$initialize$0(AbstractMediator.java:48)
+	... 24 more
+Caused by: java.lang.Exception
+	at io.openliberty.guides.kitchen.KitchenResource.initFoodOrder(KitchenResource.java:75)
+	at io.openliberty.guides.kitchen.KitchenResource$Proxy$_$$_WeldClientProxy.initFoodOrder(Unknown Source)
+	... 27 more
+
+[2020-03-05, 15:02:26:068 EST] 000000ce com.ibm.ws.microprofile.reactive.messaging.kafka.KafkaOutput E CWMRX1004E: The Reactive Messaging Kafka Outgoing Connector received an error. The error is io.smallrye.reactive.messaging.ProcessingException: Exception thrown when calling the method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+	at io.smallrye.reactive.messaging.AbstractMediator.lambda$initialize$0(AbstractMediator.java:50)
+	at io.smallrye.reactive.messaging.AbstractMediator$$Lambda$356.0000000000000000.invoke(Unknown Source)
+	at io.smallrye.reactive.messaging.AbstractMediator.invoke(AbstractMediator.java:61)
+	at io.smallrye.reactive.messaging.ProcessorMediator.lambda$processMethodReturningACompletionStageOfMessageAndConsumingIndividualMessage$16(ProcessorMediator.java:262)
+	at io.smallrye.reactive.messaging.ProcessorMediator$$Lambda$1421.0000000000000000.apply(Unknown Source)
+	at io.smallrye.reactive.streams.stages.FlatMapCompletionStageFactory$FlatMapCompletionStage.lambda$apply$0(FlatMapCompletionStageFactory.java:47)
+	at io.smallrye.reactive.streams.stages.FlatMapCompletionStageFactory$FlatMapCompletionStage$$Lambda$366.0000000000000000.apply(Unknown Source)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.onNext(FlowableFlatMap.java:132)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.drainLoop(FlowableFlatMap.java:501)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.drain(FlowableFlatMap.java:366)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.request(FlowableFlatMap.java:345)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.drainLoop(FlowableFlatMap.java:546)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$MergeSubscriber.drain(FlowableFlatMap.java:366)
+	at io.reactivex.internal.operators.flowable.FlowableFlatMap$InnerSubscriber.onComplete(FlowableFlatMap.java:678)
+	at io.reactivex.internal.subscriptions.DeferredScalarSubscription.complete(DeferredScalarSubscription.java:119)
+	at io.reactivex.processors.AsyncProcessor.onComplete(AsyncProcessor.java:201)
+	at io.smallrye.reactive.streams.utils.CompletionStageToPublisher.lambda$fromCompletionStage$0(CompletionStageToPublisher.java:23)
+	at io.smallrye.reactive.streams.utils.CompletionStageToPublisher$$Lambda$520.0000000000000000.accept(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:859)
+	at java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:837)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1776)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor589.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at io.smallrye.reactive.messaging.AbstractMediator.lambda$initialize$0(AbstractMediator.java:48)
+	... 24 more
+Caused by: java.lang.Exception
+	at io.openliberty.guides.kitchen.KitchenResource.initFoodOrder(KitchenResource.java:75)
+	at io.openliberty.guides.kitchen.KitchenResource$Proxy$_$$_WeldClientProxy.initFoodOrder(Unknown Source)
+	... 27 more
+.
+[2020-03-05, 15:02:46:044 EST] 00000043 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:02:46:045 EST] 00000043 SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:03:29:755 EST] 0000004a com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:03:29:757 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:03:29:783 EST] 00000048 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:03:29:808 EST] 0000004a com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:03:29:816 EST] 0000004a com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:03:29:816 EST] 0000004a bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:03:30:664 EST] 0000004a lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:03:30:664 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:03:30:665 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:03:30:668 EST] 0000004a io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:03:30:669 EST] 0000004a io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:03:30:669 EST] 0000004a io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:03:30:742 EST] 0000004a SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:03:30:743 EST] 0000004a SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:03:30:743 EST] 0000004a SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:03:30:928 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:03:30:953 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:03:30:954 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:03:30:954 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@fc1a0f8e)
+[2020-03-05, 15:03:30:955 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:03:30:955 EST] 0000004a io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:03:30:976 EST] 0000004a com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:03:30:976 EST] 0000004a com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:03:30:977 EST] 0000004a com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:03:30:978 EST] 0000004a com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 1.162 seconds.
+[2020-03-05, 15:03:30:978 EST] 00000056 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:03:30:978 EST] 00000056 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:03:31:008 EST] 000000d0 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:03:31:140 EST] 000000b7 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:03:31:140 EST] 000000b7 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:03:31:851 EST] 000000f7 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:03:31:853 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:03:31:878 EST] 000000f8 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:03:31:886 EST] 000000f7 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:03:31:894 EST] 000000f7 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:03:31:894 EST] 000000f7 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:03:32:732 EST] 000000f7 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:03:32:732 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:03:32:732 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:03:32:734 EST] 000000f7 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:03:32:734 EST] 000000f7 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:03:32:734 EST] 000000f7 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:03:32:775 EST] 000000f7 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:03:32:775 EST] 000000f7 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:03:32:775 EST] 000000f7 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:03:32:870 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:03:32:901 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:03:32:902 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:03:32:902 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@e016af31)
+[2020-03-05, 15:03:32:902 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:03:32:902 EST] 000000f7 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:03:32:915 EST] 000000f7 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:03:32:915 EST] 000000f7 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:03:32:915 EST] 000000f7 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:03:32:916 EST] 000000f7 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 1.022 seconds.
+[2020-03-05, 15:03:32:916 EST] 0000005e com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:03:32:917 EST] 0000005e com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:03:32:940 EST] 0000005c com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:03:33:086 EST] 000000fc SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:03:33:086 EST] 000000fc SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:03:51:145 EST] 000000f1 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:03:51:161 EST] 000000f1 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:03:53:091 EST] 00000114 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:03:53:094 EST] 00000114 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:03:53:112 EST] 00000114 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:03:53:112 EST] 00000114 SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:04:11:161 EST] 000000d1 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:04:11:162 EST] 000000d1 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:04:13:095 EST] 0000004a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:04:13:096 EST] 0000004a SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:04:13:113 EST] 00000114 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:04:13:114 EST] 00000114 SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:04:13:116 EST] 00000114 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:04:13:116 EST] 00000114 SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:04:33:115 EST] 0000004a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:04:33:116 EST] 0000004a SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:04:33:117 EST] 00000114 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:04:33:118 EST] 00000114 SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:04:33:119 EST] 00000114 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:04:33:119 EST] 00000114 SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:04:53:119 EST] 0000004a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:04:53:120 EST] 00000114 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:04:53:121 EST] 0000004a SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:04:53:121 EST] 00000114 SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:04:53:122 EST] 00000114 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:04:53:122 EST] 00000114 SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:05:13:123 EST] 0000004a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:05:13:124 EST] 00000114 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:05:13:125 EST] 0000004a SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:05:13:126 EST] 00000114 SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:05:13:127 EST] 00000114 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:05:13:127 EST] 00000114 SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:05:33:126 EST] 0000004a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:05:33:127 EST] 0000004a SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:05:33:128 EST] 00000114 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:05:33:128 EST] 00000114 SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:05:53:128 EST] 0000004a SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:05:53:129 EST] 0000004a SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:06:31:790 EST] 000000d1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:06:31:791 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:06:31:814 EST] 000000b6 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:06:31:830 EST] 000000d1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:06:31:838 EST] 000000d1 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:06:31:838 EST] 000000d1 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:06:32:823 EST] 000000d1 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:06:32:823 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:06:32:824 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:06:32:826 EST] 000000d1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:06:32:826 EST] 000000d1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:06:32:827 EST] 000000d1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:06:32:907 EST] 000000d1 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:06:32:908 EST] 000000d1 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:06:32:908 EST] 000000d1 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:06:33:076 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:06:33:091 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:06:33:091 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:06:33:091 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@51f7ae39)
+[2020-03-05, 15:06:33:092 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:06:33:092 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:06:33:104 EST] 000000d1 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:06:33:104 EST] 000000d1 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:06:33:105 EST] 000000d1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:06:33:105 EST] 000000d1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 1.267 seconds.
+[2020-03-05, 15:06:33:105 EST] 000000d8 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:06:33:106 EST] 000000d8 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:06:33:127 EST] 0000004d com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:06:33:274 EST] 00000126 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:06:33:275 EST] 00000126 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:06:33:870 EST] 00000136 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:06:33:871 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:06:33:894 EST] 0000005e com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:06:33:903 EST] 00000136 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:06:33:912 EST] 00000136 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:06:33:912 EST] 00000136 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:06:34:602 EST] 00000136 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:06:34:603 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:06:34:603 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:06:34:604 EST] 00000136 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:06:34:605 EST] 00000136 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:06:34:605 EST] 00000136 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:06:34:641 EST] 00000136 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:06:34:642 EST] 00000136 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:06:34:642 EST] 00000136 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:06:34:748 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:06:34:761 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:06:34:762 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:06:34:762 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@495d595a)
+[2020-03-05, 15:06:34:762 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:06:34:763 EST] 00000136 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:06:34:774 EST] 00000136 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:06:34:774 EST] 00000136 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:06:34:774 EST] 00000136 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:06:34:775 EST] 00000136 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 0.863 seconds.
+[2020-03-05, 15:06:34:775 EST] 00000057 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:06:34:776 EST] 00000057 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:06:34:796 EST] 0000004c com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:06:34:928 EST] 00000059 SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:06:34:928 EST] 00000059 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:06:53:279 EST] 00000128 SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:06:53:281 EST] 00000128 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:06:54:933 EST] 0000014a SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:06:54:936 EST] 0000014a SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:06:54:949 EST] 0000014a SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:06:54:950 EST] 0000014a SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:07:13:282 EST] 000000fb SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:07:13:283 EST] 000000fb SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:07:14:938 EST] 000000b6 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:07:14:939 EST] 000000b6 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:07:14:951 EST] 0000014a SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:07:14:951 EST] 0000014a SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:07:14:952 EST] 0000014a SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:07:14:952 EST] 0000014a SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:07:34:952 EST] 000000b6 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:07:34:953 EST] 000000b6 SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:07:34:954 EST] 0000014a SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:07:34:955 EST] 0000014a SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:07:34:955 EST] 0000014a SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:07:34:956 EST] 0000014a SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:07:54:956 EST] 000000b6 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:07:54:957 EST] 0000014a SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:07:54:957 EST] 000000b6 SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:07:54:958 EST] 0000014a SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:07:54:959 EST] 0000014a SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:07:54:959 EST] 0000014a SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:08:14:959 EST] 000000b6 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:08:14:960 EST] 000000b6 SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:08:14:961 EST] 0000014a SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:08:14:962 EST] 0000014a SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:08:14:963 EST] 0000014a SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:08:14:963 EST] 0000014a SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:08:34:962 EST] 000000b6 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:08:34:963 EST] 000000b6 SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:08:34:964 EST] 0000014a SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:08:34:965 EST] 0000014a SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:08:54:966 EST] 000000b6 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:08:54:967 EST] 000000b6 SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:09:38:499 EST] 000000d1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:09:38:500 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:09:38:523 EST] 00000136 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:09:38:549 EST] 000000d1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:09:38:562 EST] 000000d1 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:09:38:563 EST] 000000d1 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:09:39:357 EST] 000000d1 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:09:39:358 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:09:39:358 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:09:39:360 EST] 000000d1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:09:39:360 EST] 000000d1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:09:39:360 EST] 000000d1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:09:39:409 EST] 000000d1 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:09:39:410 EST] 000000d1 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:09:39:410 EST] 000000d1 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:09:39:511 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:09:39:525 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:09:39:525 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:09:39:525 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@81405e59)
+[2020-03-05, 15:09:39:526 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:09:39:526 EST] 000000d1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:09:39:538 EST] 000000d1 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:09:39:538 EST] 000000d1 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:09:39:538 EST] 000000d1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:09:39:539 EST] 000000d1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 0.977 seconds.
+[2020-03-05, 15:09:39:539 EST] 0000012d com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:09:39:540 EST] 0000012d com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:09:39:560 EST] 00000166 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:09:39:596 EST] 000000b1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:09:39:597 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 15:09:39:619 EST] 0000004f com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:09:39:672 EST] 000000b1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-05, 15:09:39:685 EST] 000000b1 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application kitchen.
+[2020-03-05, 15:09:39:685 EST] 000000b1 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The kitchen application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/apps/kitchen.war.xml location.
+[2020-03-05, 15:09:40:314 EST] 000000b1 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.kitchen.KitchenResource] with qualifiers [@Any @Default]
+[2020-03-05, 15:09:40:315 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.kitchen.KitchenResource
+[2020-03-05, 15:09:40:315 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 15:09:40:316 EST] 000000b1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 15:09:40:316 EST] 000000b1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 15:09:40:317 EST] 000000b1 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 15:09:40:355 EST] 000000b1 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 15:09:40:355 EST] 000000b1 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 15:09:40:355 EST] 000000b1 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 15:09:40:459 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 15:09:40:472 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 15:09:40:473 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.kitchen.KitchenResource#initFoodOrder
+[2020-03-05, 15:09:40:473 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to `foodOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@237cde44)
+[2020-03-05, 15:09:40:473 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#sendReadyOrder to sink foodOrderPublish
+[2020-03-05, 15:09:40:474 EST] 000000b1 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.kitchen.KitchenResource#initFoodOrder to sink foodOrderPublishIntermediate
+[2020-03-05, 15:09:40:485 EST] 000000b1 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 15:09:40:485 EST] 000000b1 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 15:09:40:485 EST] 000000b1 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-05, 15:09:40:486 EST] 000000b1 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application kitchen updated in 0.801 seconds.
+[2020-03-05, 15:09:40:486 EST] 00000161 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 15:09:40:486 EST] 00000161 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 15:09:40:506 EST] 0000004d com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/kitchen/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 15:09:40:638 EST] 0000004f SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:09:40:639 EST] 0000004f SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:10:00:646 EST] 0000017f SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:10:00:650 EST] 0000017f SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:10:00:662 EST] 0000017f SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:10:00:663 EST] 0000017f SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:10:20:652 EST] 00000130 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:10:20:653 EST] 00000130 SystemOut                                                    O  Order : {"item":"burger555","orderID":"0021","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:10:20:665 EST] 0000017f SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:10:20:666 EST] 0000017f SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:10:20:666 EST] 0000017f SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:10:20:667 EST] 0000017f SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"NEW","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:10:40:667 EST] 00000130 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:10:40:668 EST] 0000017f SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:10:40:669 EST] 00000130 SystemOut                                                    O  Order : {"item":"fries666","orderID":"0022","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:10:40:669 EST] 0000017f SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"IN_PROGRESS","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:10:40:670 EST] 0000017f SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:10:40:671 EST] 0000017f SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:11:00:670 EST] 00000130 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:11:00:671 EST] 00000130 SystemOut                                                    O  Order : {"item":"apple666","orderID":"0023","status":"READY","tableID":"5","type":"FOOD"}
+[2020-03-05, 15:11:00:672 EST] 0000017f SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:11:00:673 EST] 0000017f SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:11:00:674 EST] 0000017f SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:11:00:674 EST] 0000017f SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:11:20:674 EST] 00000130 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:11:20:675 EST] 0000017f SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:11:20:676 EST] 00000130 SystemOut                                                    O  Order : {"item":"burger777","orderID":"0026","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:11:20:676 EST] 0000017f SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:11:20:677 EST] 0000017f SystemOut                                                    O 
+ New Food Order received 
+[2020-03-05, 15:11:20:678 EST] 0000017f SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"NEW","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:11:40:678 EST] 00000130 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:11:40:679 EST] 0000017f SystemOut                                                    O  Food Order in Progress... 
+[2020-03-05, 15:11:40:679 EST] 00000130 SystemOut                                                    O  Order : {"item":"fries777","orderID":"0027","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:11:40:680 EST] 0000017f SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"IN_PROGRESS","tableID":"7","type":"FOOD"}
+[2020-03-05, 15:12:00:681 EST] 00000130 SystemOut                                                    O  Food Order Ready... 
+[2020-03-05, 15:12:00:682 EST] 00000130 SystemOut                                                    O  Order : {"item":"apple777","orderID":"0028","status":"READY","tableID":"7","type":"FOOD"}
+[2020-03-06, 14:41:05:685 EST] 0000002a com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Server shutdown requested on Friday, March 6, 2020 at 2:41 p.m.. The server defaultServer is shutting down.
+[2020-03-06, 14:41:05:747 EST] 00000211 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[2020-03-06, 14:41:05:785 EST] 000001e6 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host *  (IPv6) port 9083.
+[2020-03-06, 14:41:05:790 EST] 000001e6 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9083/
+[2020-03-06, 14:41:35:785 EST] 00000211 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  W CWWKE1102W: The quiesce operation did not complete. The server will now stop.
+[2020-03-06, 14:41:35:785 EST] 00000211 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  W CWWKE1107W: 6 threads did not complete during the quiesce period. 
+[2020-03-06, 14:41:35:950 EST] 000001ef io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-06, 14:41:36:053 EST] 000001ef com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application kitchen has stopped successfully.
+[2020-03-06, 14:41:36:626 EST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server defaultServer stopped after 8 hours, 41 minutes, 9.536 seconds.

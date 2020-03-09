@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<liberty-plugin-config>
+    <installDirectory>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/liberty/wlp</installDirectory>
+    <serverDirectory>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/liberty/wlp/usr/servers/defaultServer</serverDirectory>
+    <userDirectory>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/liberty/wlp/usr</userDirectory>
+    <serverOutputDirectory>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/liberty/wlp/usr/servers/defaultServer</serverOutputDirectory>
+    <serverName>defaultServer</serverName>
+    <configDirectory>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/src/main/liberty/config</configDirectory>
+    <configFile>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/src/main/liberty/config/server.xml</configFile>
+    <appsDirectory>apps</appsDirectory>
+    <looseApplication>true</looseApplication>
+    <stripVersion>false</stripVersion>
+    <installAppPackages>project</installAppPackages>
+    <applicationFilename>restaurantBFF.war.xml</applicationFilename>
+    <assemblyArtifact>
+        <groupId>io.openliberty</groupId>
+        <artifactId>openliberty-kernel</artifactId>
+        <version>20.0.0.2</version>
+        <type>zip</type>
+    </assemblyArtifact>
+    <assemblyArchive>/Users/ankit.agrawal@ibm.com/.m2/repository/io/openliberty/openliberty-kernel/20.0.0.2/openliberty-kernel-20.0.0.2.zip</assemblyArchive>
+    <assemblyInstallDirectory>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/liberty</assemblyInstallDirectory>
+    <refresh>false</refresh>
+    <installAppsConfigDropins>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/liberty/wlp/usr/servers/defaultServer/configDropins/defaults/install_apps_configuration_1491924271.xml</installAppsConfigDropins>
+    <projectType>war</projectType>
+    <projectCompileDependency>javax.enterprise:cdi-api:2.0</projectCompileDependency>
+    <projectCompileDependency>javax.el:javax.el-api:3.0.0</projectCompileDependency>
+    <projectCompileDependency>javax.interceptor:javax.interceptor-api:1.2</projectCompileDependency>
+    <projectCompileDependency>javax.inject:javax.inject:1</projectCompileDependency>
+    <projectCompileDependency>javax.json:javax.json-api:1.1</projectCompileDependency>
+    <projectCompileDependency>io.openliberty.guides:models:1.0-SNAPSHOT</projectCompileDependency>
+    <projectCompileDependency>javax.validation:validation-api:2.0.1.Final</projectCompileDependency>
+    <projectCompileDependency>javax.json.bind:javax.json.bind-api:1.0</projectCompileDependency>
+    <projectCompileDependency>org.eclipse:yasson:1.0</projectCompileDependency>
+    <projectCompileDependency>org.glassfish:javax.json:1.1</projectCompileDependency>
+    <warSourceDirectory>/Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/src/main/webapp</warSourceDirectory>
+</liberty-plugin-config>

@@ -1,0 +1,22 @@
+#Sun Mar 01 19:10:22 EST 2020
+lib/com.ibm.websphere.security_1.1.37.jar=b5fb750c9359ef083cbbf0d89c1b302c
+lib/com.ibm.ws.webcontainer.cors_1.0.37.jar=f9932c3e3e52eac64341c99b0e566ef6
+dev/api/ibm/com.ibm.websphere.appserver.api.servlet_1.1.37.jar=9cb2e044e93e3a19e37682446306a585
+lib/features/com.ibm.websphere.appserver.servlet-4.0.mf=3ea71626286a4117fd835474faf78595
+lib/com.ibm.ws.webcontainer.servlet.4.0_1.0.37.jar=f59ab3fa7cf1d06a5d498c1291cedba4
+lib/com.ibm.ws.webserver.plugin.utility_1.0.37.jar=9f3b15fcf3750fce4da0c65ca119608e
+lib/com.ibm.ws.app.manager.war_1.0.37.jar=888ab965668d457f563e7bf621e54d91
+lib/com.ibm.ws.org.apache.commons.fileupload_1.0.37.jar=a67ae9823393f281ab11d8701d77a986
+bin/pluginUtility=51ec731a6e595ec26c4eeb6ea5b5f61a
+lib/com.ibm.ws.session_1.0.37.jar=9649f9c9d335cde024c2141dab77d886
+lib/com.ibm.ws.webcontainer.servlet.4.0.factories_1.0.37.jar=b2e076c0a1780f0766c93e50b2fa4c48
+lib/com.ibm.ws.webserver.plugin.runtime_1.0.37.jar=a272626dd9a6dc2396bdffb45c49f534
+dev/api/ibm/javadoc/com.ibm.websphere.appserver.api.servlet_1.1-javadoc.zip=5f036f0b11644358a228ae1c99710e2e
+lib/com.ibm.ws.webcontainer_1.1.37.jar=0e598d37570f785ac15a320cb87f96f5
+bin/tools/ws-webserverPluginutil.jar=cf318c358102668e984d6b0085d8a771
+lib/com.ibm.ws.http.plugin.merge_1.0.37.jar=acb7d55a1cb151c426cc19833bf42b07
+lib/com.ibm.ws.webcontainer.servlet.3.1_1.0.37.jar=a9df9dd6ef09fa5ff475ea0ad014819d
+lib/com.ibm.ws.org.apache.commons.io_1.0.37.jar=922cf707627893611959733d539e1e69
+lib/com.ibm.ws.managedobject_1.0.37.jar=b4c939150fb76b42908461637b81c991
+bin/pluginUtility.bat=69f3077ef71dc5dd10783b2918a07c82
+lib/com.ibm.ws.webserver.plugin.runtime.interfaces_1.0.37.jar=f5636e213c2a7de4907fc83b03b5bc1d

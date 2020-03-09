@@ -1,0 +1,209 @@
+********************************************************************************
+product = Open Liberty 20.0.0.2 (wlp-1.0.37.cl200220200204-1746)
+wlp.install.dir = /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/
+java.home = /Library/Java/JavaVirtualMachines/adoptopenjdk-13-openj9.jdk/Contents/Home
+java.version = 13.0.1
+java.runtime = OpenJDK Runtime Environment (13.0.1+9)
+os = Mac OS X (10.15.1; x86_64) (en_CA)
+process = 79497@ankits-mbp.war.can.ibm.com
+********************************************************************************
+[2020-03-05, 9:24:07:594 EST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[2020-03-05, 9:24:08:241 EST] 00000030 com.ibm.ws.config.xml.internal.ServerXMLConfiguration        A CWWKG0093A: Processing configuration drop-ins resource: /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/configDropins/overrides/liberty-plugin-variable-config.xml
+[2020-03-05, 9:24:08:400 EST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.022 seconds
+[2020-03-05, 9:24:08:418 EST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[2020-03-05, 9:24:08:678 EST] 0000002d .apache.cxf.cxf.core.3.2:1.0.37.cl200220200204-1746(id=146)] I Aries Blueprint packages not available. So namespaces will not be registered
+[2020-03-05, 9:24:08:682 EST] 00000030 com.ibm.ws.annocache.service                                 I OSGi Work Path [ /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/workarea/org.eclipse.osgi/41/data ]
+[2020-03-05, 9:24:08:722 EST] 0000002f com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications.
+[2020-03-05, 9:24:09:140 EST] 00000040 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application bar.
+[2020-03-05, 9:24:09:140 EST] 00000040 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The bar application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/apps/bar.war.xml location.
+[2020-03-05, 9:24:09:927 EST] 00000040 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[2020-03-05, 9:24:09:937 EST] 00000040 org.jboss.weld.Version                                       I WELD-000900: 3.1.1 (Final)
+[2020-03-05, 9:24:11:876 EST] 00000040 lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.bar.BarResource] with qualifiers [@Any @Default]
+[2020-03-05, 9:24:11:877 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.bar.BarResource
+[2020-03-05, 9:24:11:882 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 9:24:11:898 EST] 00000040 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 9:24:11:899 EST] 00000040 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 9:24:11:899 EST] 00000040 io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 9:24:12:026 EST] 00000040 SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 9:24:12:026 EST] 00000040 SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 9:24:12:026 EST] 00000040 SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 9:24:12:266 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 9:24:12:357 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 9:24:12:358 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.bar.BarResource#initBeverageOrder
+[2020-03-05, 9:24:12:360 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.bar.BarResource#initBeverageOrder to `bevOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@1d4561a5)
+[2020-03-05, 9:24:12:361 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.bar.BarResource#initBeverageOrder to sink bevOrderPublishInter
+[2020-03-05, 9:24:12:363 EST] 00000040 io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.bar.BarResource#sendReadyOrder to sink beverageOrderPublish
+[2020-03-05, 9:24:12:384 EST] 00000040 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 9:24:12:386 EST] 00000040 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 9:24:12:387 EST] 00000040 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9084/
+[2020-03-05, 9:24:12:389 EST] 00000040 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application bar started in 3.249 seconds.
+[2020-03-05, 9:24:12:399 EST] 0000006a com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 9:24:12:415 EST] 0000006a com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 9:24:12:419 EST] 00000038 com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host *  (IPv6) port 9084.
+[2020-03-05, 9:24:12:429 EST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [cdi-2.0, concurrent-1.0, jaxrs-2.1, jaxrsClient-2.1, jndi-1.0, jsonb-1.0, jsonp-1.1, mpConfig-1.3, mpReactiveMessaging-1.0, mpReactiveStreams-1.0, servlet-4.0].
+[2020-03-05, 9:24:12:429 EST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 4.033 seconds.
+[2020-03-05, 9:24:12:430 EST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 5.056 seconds.
+[2020-03-05, 9:24:12:635 EST] 00000044 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 9:25:26:433 EST] 0000008f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9084/
+[2020-03-05, 9:25:26:440 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 9:25:26:481 EST] 00000038 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 9:25:26:502 EST] 0000008f com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application bar has stopped successfully.
+[2020-03-05, 9:25:26:523 EST] 0000008f com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application bar.
+[2020-03-05, 9:25:26:523 EST] 0000008f bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The bar application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/apps/bar.war.xml location.
+[2020-03-05, 9:25:27:815 EST] 0000008f lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.bar.BarResource] with qualifiers [@Any @Default]
+[2020-03-05, 9:25:27:815 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.bar.BarResource
+[2020-03-05, 9:25:27:816 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 9:25:27:818 EST] 0000008f io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 9:25:27:818 EST] 0000008f io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 9:25:27:818 EST] 0000008f io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 9:25:27:866 EST] 0000008f SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 9:25:27:866 EST] 0000008f SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 9:25:27:867 EST] 0000008f SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 9:25:27:994 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 9:25:28:008 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 9:25:28:009 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.bar.BarResource#initBeverageOrder
+[2020-03-05, 9:25:28:009 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.bar.BarResource#initBeverageOrder to `bevOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@790b1f39)
+[2020-03-05, 9:25:28:009 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.bar.BarResource#initBeverageOrder to sink bevOrderPublishInter
+[2020-03-05, 9:25:28:010 EST] 0000008f io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.bar.BarResource#sendReadyOrder to sink beverageOrderPublish
+[2020-03-05, 9:25:28:029 EST] 0000008f com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 9:25:28:029 EST] 0000008f com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 9:25:28:029 EST] 0000008f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9084/
+[2020-03-05, 9:25:28:030 EST] 0000008f com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application bar updated in 1.507 seconds.
+[2020-03-05, 9:25:28:036 EST] 000000a8 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 9:25:28:037 EST] 000000a8 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 9:25:28:074 EST] 000000a9 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 9:25:28:128 EST] 000000ad com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9084/
+[2020-03-05, 9:25:28:131 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-05, 9:25:28:167 EST] 000000ae com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 9:25:28:284 EST] 000000ad com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application bar has stopped successfully.
+[2020-03-05, 9:25:28:299 EST] 000000ad com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application bar.
+[2020-03-05, 9:25:28:300 EST] 000000ad bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: The bar application is using the loose application definition at the /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/apps/bar.war.xml location.
+[2020-03-05, 9:25:29:191 EST] 000000ad lrye.reactive.messaging.extension.ReactiveMessagingExtension I Analyzing mediator bean: Managed Bean [class io.openliberty.guides.bar.BarResource] with qualifiers [@Any @Default]
+[2020-03-05, 9:25:29:193 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Scanning Type: class io.openliberty.guides.bar.BarResource
+[2020-03-05, 9:25:29:193 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Deployment done... start processing
+[2020-03-05, 9:25:29:195 EST] 000000ad io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found incoming connectors: []
+[2020-03-05, 9:25:29:195 EST] 000000ad io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Found outgoing connectors: []
+[2020-03-05, 9:25:29:195 EST] 000000ad io.smallrye.reactive.messaging.impl.ConfiguredChannelFactory I Stream manager initializing...
+[2020-03-05, 9:25:29:239 EST] 000000ad SystemErr                                                    R SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+[2020-03-05, 9:25:29:239 EST] 000000ad SystemErr                                                    R SLF4J: Defaulting to no-operation (NOP) logger implementation
+[2020-03-05, 9:25:29:240 EST] 000000ad SystemErr                                                    R SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[2020-03-05, 9:25:29:372 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Initializing mediators
+[2020-03-05, 9:25:29:383 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting mediators
+[2020-03-05, 9:25:29:384 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Attempt to resolve io.openliberty.guides.bar.BarResource#initBeverageOrder
+[2020-03-05, 9:25:29:384 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting io.openliberty.guides.bar.BarResource#initBeverageOrder to `bevOrderConsume` (org.eclipse.microprofile.reactive.streams.operators.core.PublisherBuilderImpl@e45e7b3b)
+[2020-03-05, 9:25:29:384 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.bar.BarResource#initBeverageOrder to sink bevOrderPublishInter
+[2020-03-05, 9:25:29:385 EST] 000000ad io.smallrye.reactive.messaging.extension.MediatorManager     I Connecting method io.openliberty.guides.bar.BarResource#sendReadyOrder to sink beverageOrderPublish
+[2020-03-05, 9:25:29:397 EST] 000000ad com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: Liberty Project.
+[2020-03-05, 9:25:29:397 EST] 000000ad com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module Liberty Project has been bound to default_host.
+[2020-03-05, 9:25:29:397 EST] 000000ad com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://ankits-mbp.war.can.ibm.com:9084/
+[2020-03-05, 9:25:29:398 EST] 000000ad com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: The application bar updated in 1.099 seconds.
+[2020-03-05, 9:25:29:398 EST] 00000091 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/
+[2020-03-05, 9:25:29:399 EST] 00000091 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[2020-03-05, 9:25:29:423 EST] 0000004b com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/bar/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[2020-03-05, 10:46:38:254 EST] 000000a2 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 10:46:38:256 EST] 000000a2 SystemOut                                                    O  Order : {"item":"tea","orderID":"0003","status":"NEW","tableID":"1","type":"BEVERAGE"}
+[2020-03-05, 10:46:58:320 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 10:46:58:324 EST] 000000c5 SystemOut                                                    O  Order : {"item":"tea","orderID":"0003","status":"IN_PROGRESS","tableID":"1","type":"BEVERAGE"}
+[2020-03-05, 10:46:58:342 EST] 000000c5 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 10:46:58:342 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee","orderID":"0004","status":"NEW","tableID":"1","type":"BEVERAGE"}
+[2020-03-05, 10:47:18:324 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 10:47:18:325 EST] 00000043 SystemOut                                                    O  Order : {"item":"tea","orderID":"0003","status":"READY","tableID":"1","type":"BEVERAGE"}
+[2020-03-05, 10:47:18:343 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 10:47:18:344 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee","orderID":"0004","status":"IN_PROGRESS","tableID":"1","type":"BEVERAGE"}
+[2020-03-05, 10:47:38:344 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 10:47:38:344 EST] 00000043 SystemOut                                                    O  Order : {"item":"coffee","orderID":"0004","status":"READY","tableID":"1","type":"BEVERAGE"}
+[2020-03-05, 10:48:28:711 EST] 00000086 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 10:48:28:712 EST] 00000086 SystemOut                                                    O  Order : {"item":"tea22","orderID":"0007","status":"NEW","tableID":"2","type":"BEVERAGE"}
+[2020-03-05, 10:48:48:741 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 10:48:48:742 EST] 000000c5 SystemOut                                                    O  Order : {"item":"tea22","orderID":"0007","status":"IN_PROGRESS","tableID":"2","type":"BEVERAGE"}
+[2020-03-05, 10:48:48:743 EST] 000000c5 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 10:48:48:743 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee22","orderID":"0008","status":"NEW","tableID":"2","type":"BEVERAGE"}
+[2020-03-05, 10:49:08:752 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 10:49:08:753 EST] 00000043 SystemOut                                                    O  Order : {"item":"tea22","orderID":"0007","status":"READY","tableID":"2","type":"BEVERAGE"}
+[2020-03-05, 10:49:08:754 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 10:49:08:754 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee22","orderID":"0008","status":"IN_PROGRESS","tableID":"2","type":"BEVERAGE"}
+[2020-03-05, 10:49:28:758 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 10:49:28:759 EST] 00000043 SystemOut                                                    O  Order : {"item":"coffee22","orderID":"0008","status":"READY","tableID":"2","type":"BEVERAGE"}
+[2020-03-05, 10:52:06:836 EST] 00000083 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 10:52:06:836 EST] 00000083 SystemOut                                                    O  Order : {"item":"tea333","orderID":"0011","status":"NEW","tableID":"3","type":"BEVERAGE"}
+[2020-03-05, 10:52:26:837 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 10:52:26:838 EST] 000000c5 SystemOut                                                    O  Order : {"item":"tea333","orderID":"0011","status":"IN_PROGRESS","tableID":"3","type":"BEVERAGE"}
+[2020-03-05, 10:52:26:839 EST] 000000c5 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 10:52:26:839 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee333","orderID":"0012","status":"NEW","tableID":"3","type":"BEVERAGE"}
+[2020-03-05, 10:52:46:839 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 10:52:46:840 EST] 00000043 SystemOut                                                    O  Order : {"item":"tea333","orderID":"0011","status":"READY","tableID":"3","type":"BEVERAGE"}
+[2020-03-05, 10:52:46:840 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 10:52:46:841 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee333","orderID":"0012","status":"IN_PROGRESS","tableID":"3","type":"BEVERAGE"}
+[2020-03-05, 10:53:06:842 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 10:53:06:843 EST] 00000043 SystemOut                                                    O  Order : {"item":"coffee333","orderID":"0012","status":"READY","tableID":"3","type":"BEVERAGE"}
+[2020-03-05, 14:31:32:035 EST] 000000ac SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 14:31:32:039 EST] 000000ac SystemOut                                                    O  Order : {"item":"tea444","orderID":"0015","status":"NEW","tableID":"4","type":"BEVERAGE"}
+[2020-03-05, 14:31:52:041 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 14:31:52:043 EST] 000000c5 SystemOut                                                    O  Order : {"item":"tea444","orderID":"0015","status":"IN_PROGRESS","tableID":"4","type":"BEVERAGE"}
+[2020-03-05, 14:31:52:049 EST] 000000c5 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 14:31:52:049 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee444","orderID":"0016","status":"NEW","tableID":"4","type":"BEVERAGE"}
+[2020-03-05, 14:32:12:044 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 14:32:12:046 EST] 00000043 SystemOut                                                    O  Order : {"item":"tea444","orderID":"0015","status":"READY","tableID":"4","type":"BEVERAGE"}
+[2020-03-05, 14:32:12:050 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 14:32:12:051 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee444","orderID":"0016","status":"IN_PROGRESS","tableID":"4","type":"BEVERAGE"}
+[2020-03-05, 14:32:32:052 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 14:32:32:053 EST] 00000043 SystemOut                                                    O  Order : {"item":"coffee444","orderID":"0016","status":"READY","tableID":"4","type":"BEVERAGE"}
+[2020-03-05, 14:34:35:644 EST] 0000004f SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 14:34:35:646 EST] 0000004f SystemOut                                                    O  Order : {"item":"tea555","orderID":"0019","status":"NEW","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:34:55:648 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 14:34:55:649 EST] 000000c5 SystemOut                                                    O  Order : {"item":"tea555","orderID":"0019","status":"IN_PROGRESS","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:34:55:650 EST] 000000c5 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 14:34:55:650 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee555","orderID":"0020","status":"NEW","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:35:15:670 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 14:35:15:671 EST] 00000043 SystemOut                                                    O  Order : {"item":"tea555","orderID":"0019","status":"READY","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:35:15:672 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 14:35:15:672 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee555","orderID":"0020","status":"IN_PROGRESS","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:35:35:685 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 14:35:35:686 EST] 00000043 SystemOut                                                    O  Order : {"item":"coffee555","orderID":"0020","status":"READY","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:47:11:162 EST] 0000004a SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 14:47:11:163 EST] 0000004a SystemOut                                                    O  Order : {"item":"tea666","orderID":"0024","status":"NEW","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:47:31:165 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 14:47:31:167 EST] 000000c5 SystemOut                                                    O  Order : {"item":"tea666","orderID":"0024","status":"IN_PROGRESS","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:47:31:169 EST] 000000c5 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 14:47:31:170 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee666","orderID":"0025","status":"NEW","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:47:51:168 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 14:47:51:169 EST] 00000043 SystemOut                                                    O  Order : {"item":"tea666","orderID":"0024","status":"READY","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:47:51:171 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 14:47:51:172 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee666","orderID":"0025","status":"IN_PROGRESS","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 14:48:11:172 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 14:48:11:174 EST] 00000043 SystemOut                                                    O  Order : {"item":"coffee666","orderID":"0025","status":"READY","tableID":"5","type":"BEVERAGE"}
+[2020-03-05, 15:02:06:041 EST] 000000de SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 15:02:06:042 EST] 000000de SystemOut                                                    O  Order : {"item":"tea777","orderID":"0029","status":"NEW","tableID":"7","type":"BEVERAGE"}
+[2020-03-05, 15:02:26:042 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 15:02:26:043 EST] 000000c5 SystemOut                                                    O  Order : {"item":"tea777","orderID":"0029","status":"IN_PROGRESS","tableID":"7","type":"BEVERAGE"}
+[2020-03-05, 15:02:26:045 EST] 000000c5 SystemOut                                                    O 
+ New Beverage Order received 
+[2020-03-05, 15:02:26:046 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee777","orderID":"0030","status":"NEW","tableID":"7","type":"BEVERAGE"}
+[2020-03-05, 15:02:46:044 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 15:02:46:045 EST] 00000043 SystemOut                                                    O  Order : {"item":"tea777","orderID":"0029","status":"READY","tableID":"7","type":"BEVERAGE"}
+[2020-03-05, 15:02:46:046 EST] 000000c5 SystemOut                                                    O  Beverage Order in Progress... 
+[2020-03-05, 15:02:46:047 EST] 000000c5 SystemOut                                                    O  Order : {"item":"coffee777","orderID":"0030","status":"IN_PROGRESS","tableID":"7","type":"BEVERAGE"}
+[2020-03-05, 15:03:06:048 EST] 00000043 SystemOut                                                    O  Beverage Order Ready... 
+[2020-03-05, 15:03:06:049 EST] 00000043 SystemOut                                                    O  Order : {"item":"coffee777","orderID":"0030","status":"READY","tableID":"7","type":"BEVERAGE"}
+[2020-03-06, 14:41:07:953 EST] 0000002a com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Server shutdown requested on Friday, March 6, 2020 at 2:41 p.m.. The server defaultServer is shutting down.
+[2020-03-06, 14:41:08:046 EST] 00000187 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[2020-03-06, 14:41:08:075 EST] 00000071 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host *  (IPv6) port 9084.
+[2020-03-06, 14:41:08:081 EST] 00000071 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://ankits-mbp.war.can.ibm.com:9084/
+[2020-03-06, 14:41:38:074 EST] 00000187 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  W CWWKE1102W: The quiesce operation did not complete. The server will now stop.
+[2020-03-06, 14:41:38:076 EST] 00000187 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  W CWWKE1107W: 3 threads did not complete during the quiesce period. 
+[2020-03-06, 14:41:38:229 EST] 00000086 io.smallrye.reactive.messaging.extension.MediatorManager     I Cancel subscriptions
+[2020-03-06, 14:41:38:312 EST] 00000086 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application bar has stopped successfully.
+[2020-03-06, 14:41:38:891 EST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server defaultServer stopped after 14 hours, 14 minutes, 29.081 seconds.
