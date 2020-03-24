@@ -6,32 +6,32 @@
 // Contributors:
 //     IBM Corporation
 //
-:projectid: microprofile-reactive-messaging
+:projectid: microprofile-reactive-messaging-acknowledgement
 :page-layout: guide-multipane
 :page-duration: 30 minutes
 :page-releasedate: 2020-04-13
 :page-guide-category: microprofile
 :page-essential: false
-:page-description: Learn how to use MicroProfile Reactive Messaging to implement an application with a reactive architecture.
+:page-description: Learn how to use various MicroProfile Reactive Messaging acknowledgement strategies to acknowledge messages.
 :guide-author: Open Liberty
 :page-tags: ['MicroProfile', 'Jakarta EE', 'Microservices']
 :page-related-guides: ['containerize']
 :page-permalink: /guides/{projectid}
 :imagesdir: /img/guide/{projectid}
-:page-seo-title: Creating a MicroProfile Reactive Messaging REST service
-:page-seo-description: A tutorial on how to create a microservices in Open Liberty using MicroProfile Reactive Messaging
+:page-seo-title: Creating a MicroProfile Reactive Messaging REST service with different acknowledgement strategies
+:page-seo-description: A tutorial on how to acknowledge a message in Open Liberty using MicroProfile Reactive Messaging and their comparison
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/dev
 :source-highlighter: prettify
-= Creating asynchronous reactive microservices using MicroProfile Reactive Messaging
+= Acknowledging asynchronous messages using MicroProfile Reactive Messaging acknowledgement strategies
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].   
 
-Learn how to use MicroProfile Reactive Messaging to implement an application with a reactive architecture.
+Learn how to use MicroProfile Reactive Messaging acknowledgement strategies to acknowledge messages.
 
 == What you'll learn
 
-You will learn how to build reactive microservices using MicroProfile Reactive Messaging. You'll also learn how to send messages between these microservices using Apache Kafka. 
+You will learn how to acknowledge messages using MicroProfile Reactive Messaging acknowledgement. You'll also learn how this works with Apache Kafka. 
 
 === What is MicroProfile Reactive Messaging?
 
@@ -47,7 +47,7 @@ Imagine asynchronous programming as a restaurant. After you're seated, a waiter 
 
 The OpenLiberty Cafe application is designed with reactive architecture. The application that you'll be working with consists of six microservices : `Kitchen`, `Bar`, `Order`, `ServingWindow`, `Status`, and `OpenLibertyCafe`. It also uses Kafka to enable reactive messaging communication between the Producer and Consumer microservices over the messaging channels.
 
-You'll update the `Order`, `Kitchen`, `Bar`, `ServingWindow`, and `Status` microservices to use MicroProfile Reactive Messaging for message passing. These microservices run on Open Liberty.
+You'll update the `Kitchen`, `Bar`, and `Order` microservices to use MicroProfile Reactive Messaging acknowledgement strategies for message acknowledgement. These microservices run on Open Liberty.
 
 image::reactive-messaging-restaurant.png[Reactive restaurant,align="center"]
 
@@ -83,24 +83,25 @@ include::{common-includes}/gitclone.adoc[]
 
 === Key Concepts
 
-MicroProfile Reactive Messaging recommends a design to build reactive applications based on the following main concepts:
+MicroProfile Reactive Messaging acknowledgement consists of the following main concepts:
 
-*Channel*
+Acknowledgement is an important part of message processing. Messages are either acknowledged explicitly, or implicitly by the implementation.
 
-A channel is a name indicating which source or destination of messages is used. Channels are opaque Strings.
+Acknowledgement for the @Incoming messages is controlled by the org.eclipse.microprofile.reactive.messaging.Acknowledgment annotation. The annotation allows configuring the acknowledgement strategy among:
 
-*@Outgoing* 
+NONE - no acknowledgment is performed
 
-Outgoing is an annotation indicating that the method feeds a channel. The name of the channel is given as attribute.
+MANUAL - the user is responsible for the acknowledgement, by calling the Message#ack() method, so the Reactive Messaging implementation does not apply implicit acknowledgement
 
-*@Incoming*
+PRE_PROCESSING - the Reactive Messaging implementation acknowledges the message before the annotated method or processing is executed
 
-Incoming is an annotation indicating that the method consumes a channel. The name of the channel is given as attribute.
+POST_PROCESSING - the Reactive Messaging implementation acknowledges the message once:
+the method or processing completes if the method does not emit data
+when the emitted data is acknowledged
 
-*Connector*
+Each method signature type has different defaults and can implement different acknowledgement policies. If the Acknowledgment annotation is not set, the default policy is applied.
 
-Reactive messaging uses connectors to attach one end of a channel to other messaging technology and are configured using MicroProfile Config.
-Open Liberty includes the `liberty-kafka` connector for sending and receiving messages from an Apache Kafka.
+IMPORTANT : Method only annotated with @Outgoing do not support acknowledgement as they don’t receive an input Message.
 
 === Configuring the MicroProfile Reactive Messaging
 
@@ -170,7 +171,7 @@ The `Order` microservice creates orders when the [hotspot=postOrder file=0]`POST
 `order/pom.xml`
 ---- 
 pom.xml
-[source, XML ,linenums,role="code_column"]
+[source, XML ,linenums,role="code_column"]  
 ----
 include::finish/order/pom.xml[]
 ----
