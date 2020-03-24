@@ -14,6 +14,7 @@ package io.openliberty.guides.status;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletionStage;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -27,7 +28,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.eclipse.microprofile.reactive.messaging.Acknowledgment;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
+import org.eclipse.microprofile.reactive.messaging.Message;
 
 import io.openliberty.guides.models.Order;
 
@@ -97,15 +100,19 @@ public class StatusResource {
     // tag::updateStatus[]
     @Incoming("updateStatus")
     // end::updateStatus[]
-    public void updateStatus(Order order)  {
-        String orderId = order.getOrderId();
+    // tag::ackManual[]
+    @Acknowledgment(Acknowledgment.Strategy.MANUAL)
+    // end::ackManual[]
+    public CompletionStage<Void> updateStatus(Message<Order> order)  {
+        String orderId = order.getPayload().getOrderId();
         if (manager.getOrder(orderId).isPresent()) {
-            manager.updateStatus(orderId, order.getStatus());
+            manager.updateStatus(orderId, order.getPayload().getStatus());
             logger.info("Order " + orderId + " status updated to "
-                + order.getStatus() + ": " + order);
+                + order.getPayload().getStatus() + ": " + order);
         } else {
-            manager.addOrder(order);
+            manager.addOrder(order.getPayload());
             logger.info("Order " + orderId + " was added: " + order);	
         }
+        return order.ack();
     }
 }

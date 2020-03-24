@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 
+import org.eclipse.microprofile.reactive.messaging.Acknowledgment;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 import org.reactivestreams.Publisher;
@@ -45,6 +46,9 @@ public class BarService {
     @Outgoing("beverageOrderPublishStatus")
     // end::bevOrderPublishInter[]
     // tag::initBevOrder[]
+    // tag::ackPreProcessing[]
+    @Acknowledgment(Acknowledgment.Strategy.PRE_PROCESSING)
+    // end::ackPreProcessing[]
     public Order receiveBeverageOrder(Order newOrder) {
         logger.info("Order " + newOrder.getOrderId() + " received as NEW");
         logger.info(newOrder.toString());

@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 
+import org.eclipse.microprofile.reactive.messaging.Acknowledgment;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 import org.reactivestreams.Publisher;
@@ -45,6 +46,9 @@ public class KitchenService {
     @Outgoing("foodOrderPublishStatus")
     // end::foodOrderPublishIntermediate[]
     // tag::initFoodOrder[]
+    // tag::ackPostProcessing[]
+    @Acknowledgment(Acknowledgment.Strategy.POST_PROCESSING)
+    // end::ackPostProcessing[]
     public Order receiveFoodOrder(Order newOrder) {
         logger.info("Order " + newOrder.getOrderId() + " received with a status of NEW");
         logger.info(newOrder.toString());
