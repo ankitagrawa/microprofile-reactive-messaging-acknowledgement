@@ -1,6 +1,0 @@
-
- Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
-------+------+---------------------------+---------------------------+---------------------------
-     0      1 2020-03-02, 14:18:57:093 EST 2020-03-02, 14:18:57:093 EST javax.ws.rs.ProcessingException com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1105
-                                                                            - /Users/ankit.agrawal@ibm.com/foodOrderRestaurantApp/finish/restaurantBFF/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_20.03.02_14.18.57.0.log
-------+------+---------------------------+---------------------------+---------------------------
