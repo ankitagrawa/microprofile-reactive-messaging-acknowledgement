@@ -103,6 +103,7 @@ public class StatusResource {
     // tag::ackManual[]
     @Acknowledgment(Acknowledgment.Strategy.MANUAL)
     // end::ackManual[]
+    // tag::updateStatusMethod[]
     public CompletionStage<Void> updateStatus(Message<Order> order)  {
         String orderId = order.getPayload().getOrderId();
         if (manager.getOrder(orderId).isPresent()) {
@@ -113,6 +114,9 @@ public class StatusResource {
             manager.addOrder(order.getPayload());
             logger.info("Order " + orderId + " was added: " + order);	
         }
+        // tag::manualAckUser[]
         return order.ack();
+        // end::manualAckUser[]
     }
+    // end::updateStatusMethod[]
 }

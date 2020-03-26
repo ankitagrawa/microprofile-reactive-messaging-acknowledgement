@@ -45,10 +45,10 @@ public class BarService {
     // tag::bevOrderPublishInter[]
     @Outgoing("beverageOrderPublishStatus")
     // end::bevOrderPublishInter[]
-    // tag::initBevOrder[]
     // tag::ackPreProcessing[]
     @Acknowledgment(Acknowledgment.Strategy.PRE_PROCESSING)
     // end::ackPreProcessing[]
+    // tag::initBevOrder[]
     public Order receiveBeverageOrder(Order newOrder) {
         logger.info("Order " + newOrder.getOrderId() + " received as NEW");
         logger.info(newOrder.toString());

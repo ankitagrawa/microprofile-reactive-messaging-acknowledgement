@@ -45,10 +45,10 @@ public class KitchenService {
     // tag::foodOrderPublishIntermediate[]
     @Outgoing("foodOrderPublishStatus")
     // end::foodOrderPublishIntermediate[]
-    // tag::initFoodOrder[]
     // tag::ackPostProcessing[]
     @Acknowledgment(Acknowledgment.Strategy.POST_PROCESSING)
     // end::ackPostProcessing[]
+    // tag::initFoodOrder[]
     public Order receiveFoodOrder(Order newOrder) {
         logger.info("Order " + newOrder.getOrderId() + " received with a status of NEW");
         logger.info(newOrder.toString());
