@@ -64,6 +64,8 @@ The `ServingWindow` microservice illustrates when the food and beverages are rea
 
 The `Status` microservice receives status updates and provides queries for the waitstaff. All the orders are persisted here. Because persisting data is not the focus of this guide, the `Status` microservice simply uses a Map object to store the data.
 
+image::reactive-messaging-keyconcepts.png[Reactive key concepts,align="center"]
+
 // =================================================================================================
 // Prerequisites
 // =================================================================================================
@@ -80,8 +82,6 @@ Install Docker by following the instructions on the official https://docs.docker
 include::{common-includes}/gitclone.adoc[]
 
 == MicroProfile Reactive Messaging Acknowledgement Strategies
-
-image::reactive-messaging-keyconcepts.png[Reactive key concepts,align="center"]
 
 MicroProfile Reactive Messaging Acknowledgement ensures that in case of any system failure, no messages are lost. Messaging system like Apache Kafka differentiates between when a message is being delivered to a system and the processing of that message by that system being complete. If the system goes down, any messages which have been sent but not processed completely can then be sent again. Reactive messaging applications implement this using message acknowledgements.
 
@@ -128,7 +128,7 @@ The [hotspot=initBevOrder file=0]`receiveBeverageOrder()` method in Bar microser
 O method(I payload)
 ----
 
-Based on the above mentioned table, the default acknowledgement strategy would be `POST_PROCESSING`. It means that the messages will be acknowledged when the annotated method executes completely. However when we change the strategy to `PRE_PROCESSING`, the incoming message will be acknowledged even before the annotated method is called. It also means that the acknowledgment of the outgoing message would not acknowledge the incoming message anymore, as it’s already acknowledged. So if the service goes down when the message is being processed, the kafka won't resend the message and the message would be lost.
+Based on the table mentioned https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[here^] , the default acknowledgement strategy would be `POST_PROCESSING`. It means that the messages will be acknowledged when the annotated method executes completely. However when we change the strategy to `PRE_PROCESSING`, the incoming message will be acknowledged even before the annotated method is called. It also means that the acknowledgment of the outgoing message would not acknowledge the incoming message anymore, as it’s already acknowledged. So if the service goes down when the message is being processed, the kafka won't resend the message and the message would be lost.
 
 === Building the Kitchen microservice with POST_PROCESSING Acknowledgement strategy
 
