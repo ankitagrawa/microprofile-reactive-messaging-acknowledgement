@@ -51,7 +51,7 @@ You'll update the `Kitchen`, `Bar`, and `Order` microservices to use MicroProfil
 
 image::reactive-messaging-restaurant.png[Reactive restaurant,align="center"]
 
-The `OpenLibertyCafe` microservice is a https://microservices.io/patterns/apigateway.html#variation-backends-for-frontends[backends for frontends^] service.
+The `OpenLibertyCafe` microservice is a https://microservices.io/patterns/apigateway.html#variation-backends-for-frontends[backend for frontend^] service.
 It communicates with the backend microservices on the caller's behalf.
 
 The waiter places a request using the `OpenLibertyCafe` microservice.
@@ -152,35 +152,35 @@ The [hotspot=initFoodOrder file=0]`receiveFoodOrder()` method in Kitchen microse
 
 Check the https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[specification^] to see whether reactive messaging does `PRE_PROCESSING` or `POST_PROCESSING` message acknowledgements for your method. If it does `PRE_PROCESSING` consider changing to `POST_PROCESSING` if you don't want message to be lost.
 
-// === Building the Status microservice with MANUAL Acknowledgement strategy
+=== Building the Status microservice with MANUAL Acknowledgement strategy
 
-// If the acknowledgement strategy is set to `MANUAL`, a user or a developer is responsible for the acknowledgement. It can be achieved by calling the `Message.ack()` method, so that the Reactive Messaging implementation does not apply implicit acknowledgement.
+If the acknowledgement strategy is set to `MANUAL`, a user or a developer is responsible for the acknowledgement. It can be achieved by calling the `Message.ack()` method, so that the Reactive Messaging implementation does not apply implicit acknowledgement.
 
-// //status
-// [role="code_command hotspot file=1", subs="quotes"]
-// ----
-// #Replace the `StatusResource` class.#
-// `status/src/main/java/io/openliberty/guides/status/StatusResource.java`
-// ----
+//status
+[role="code_command hotspot file=0", subs="quotes"]
+----
+#Replace the `StatusResource` class.#
+`status/src/main/java/io/openliberty/guides/status/StatusResource.java`
+----
 
-// StatusResource.java
-// [source, Java, linenums, role='code_column hide_tags=copyright']
-// ----
-// include::finish/status/src/main/java/io/openliberty/guides/status/StatusResource.java[]
-// ----
+StatusResource.java
+[source, Java, linenums, role='code_column hide_tags=copyright']
+----
+include::finish/status/src/main/java/io/openliberty/guides/status/StatusResource.java[]
+----
 
-// status/microprofile-config.properties
-// [source, Text, linenums, role='code_column hide_tags=copyright']
-// ----
-// include::finish/status/src/main/resources/META-INF/microprofile-config.properties[]
-// ----
+status/microprofile-config.properties
+[source, Text, linenums, role='code_column hide_tags=copyright']
+----
+include::finish/status/src/main/resources/META-INF/microprofile-config.properties[]
+----
 
-// The `Status` microservice receives the message from the `Bar`, `Kitchen`, `Order`, and `ServingWindow` microservices over the [hotspot=updateStatus file=1]`@Incoming("updateStatus")` channel with its properties defined in the [hotspot=updateStatus file=2]`microprofile-config.properties`.
+The `Status` microservice receives the message from the `Bar`, `Kitchen`, `Order`, and `ServingWindow` microservices over the [hotspot=updateStatus file=0]`@Incoming("updateStatus")` channel with its properties defined in the [hotspot=updateStatus file=1]`microprofile-config.properties`.
 
-// The [hotspot=updateStatusMethod file=1]`updateStatus()` method in Status microservice annotated with [hotspot=ackManual file=1]`MANUAL` acknowledgement strategy 
-// indicates that the incoming message acknowledgement is managed by the user code. The [hotspot=manualAckUser file=1]`order.ack()` method acknowledges the message once the method completes all it's processing.
+The [hotspot=updateStatusMethod file=0]`updateStatus()` method in Status microservice annotated with [hotspot=ackManual file=0]`MANUAL` acknowledgement strategy 
+indicates that the incoming message acknowledgement is managed by the user code. The [hotspot=manualAckUser file=0]`order.ack()` method acknowledges the message once the method completes all it's processing.
 
-// For the `MANUAL` acknowledgement, transiting data needs to be wrapped in a `Message`. The `Message` class provides metadata and also allows messages to be acknowledged.
+For the `MANUAL` acknowledgement, transiting data needs to be wrapped in a `Message`. The `Message` class provides metadata and also allows messages to be acknowledged.
 
 == Building the application
 
