@@ -40,29 +40,29 @@ https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/mi
 
 === What is Kafka?
 
-https://kafka.apache.org/[Apache Kafka^] is a stream-processing platform that manages communication in distributed systems. Communication is message-oriented, and follows the publish-subscribe model. Kafka allows for real-time stream processing and distributed, replicated storage of streams and messages. Kafka Producer is a client or a program, which produces the message and pushes it to the Topic. Whereas Kafka Consumer is a client or a program, which consumes the published messages from the Producer.
+https://kafka.apache.org/[Apache Kafka^] is a stream-processing platform that manages communication in distributed systems. Communication is message-oriented, and follows the publish-subscribe model. Kafka allows for real-time stream processing and distributed, replicated storage of streams and messages. A Kafka producer is a client or a program, which produces the message and pushes them to a topic. A Kafka consumer is a client or a program, which consumes the published messages from a topic.
 
 === What is asynchronous programming?
-Imagine asynchronous programming as a restaurant. After you're seated, a waiter takes your order. Then, you must wait a few minutes for your food to be prepared. While your food is being prepared, your waiter may take more orders or serve other tables. After your food is ready, your waiter brings out the food to your table. However, in a synchronous model, the waiter must wait for your food to be prepared before serving any other customers. This method blocks other customers from placing orders or receiving their food.
+Imagine asynchronous programming as a restaurant. After you're seated, a waitstaff takes your order. Then, you must wait a few minutes for your food to be prepared. While your food is being prepared, your waitstaff may take more orders or serve other tables. After your food is ready, your waitstaff brings out the food to your table. However, in a synchronous model, the waitstaff must wait for your food to be prepared before serving any other customers. This method blocks other customers from placing orders or receiving their food.
 
-The OpenLiberty Cafe application is designed with reactive architecture. The application that you'll be working with consists of six microservices : `Kitchen`, `Bar`, `Order`, `ServingWindow`, `Status`, and `OpenLibertyCafe`. It also uses Kafka to enable reactive messaging communication between the Producer and Consumer microservices over the messaging channels.
+The OpenLiberty Cafe application that you'll be working with consists of six microservices : `Bar`, `Kitchen`, `Order`, `OpenLibertyCafe`, `ServingWindow`, and `Status`. It also uses Kafka to enable reactive messaging communication between the Producer and Consumer microservices over the messaging channels.
 
-You'll update the `Kitchen`, `Bar`, and `Order` microservices to use MicroProfile Reactive Messaging acknowledgement strategies for message acknowledgement. These microservices run on Open Liberty.
+You'll update the `Bar`, `Kitchen`, and `Status` microservices to use MicroProfile Reactive Messaging acknowledgement strategies for message acknowledgement. These microservices run on Open Liberty.
 
 image::reactive-messaging-restaurant.png[Reactive restaurant,align="center"]
 
 The `OpenLibertyCafe` microservice is a https://microservices.io/patterns/apigateway.html#variation-backends-for-frontends[backend for frontend^] service.
 It communicates with the backend microservices on the caller's behalf.
 
-The waiter places a request using the `OpenLibertyCafe` microservice.
+The waitstaff places a request using the `OpenLibertyCafe` microservice.
 
-The `Order` microservice consumes the request, produces order messages, and sends them to the Kafka on the `food` or `beverage` channel depending on the type. 
+The `Order` microservice consumes the request, produces order messages, and sends them to Kafka on the `food` or `beverage` channel depending on the type. 
 
-An order begins with a `NEW` status. The `Kitchen` and `Bar` microservices illustrate how to handle the orders as a real cafe. They consume and process the order and update the status to `IN_PROGRESS` and `READY` consecutively. There’s a sleep operation in between each status to represent the order processing time, and the status updates are reported back to the `Status` microservice via reactive messages on the Kafka.
+An order begins with a `NEW` status. The `Bar` and `Kitchen` microservices illustrate how to handle the orders as a real cafe. They consume and process the order and update the status to `IN_PROGRESS` and `READY` consecutively. There’s a sleep operation in between each status to represent the order processing time, and the status updates are reported back to the `Status` microservice via reactive messages on the Kafka.
 
-The `ServingWindow` microservice illustrates when the food and beverages are ready to be served. It consumes the `READY` order from the `Kitchen` and `Bar` microservices. Once the order is served, waiter can mark the order as `COMPLETED` and the status is sent back to the `Status` microservice as a message.
+The `ServingWindow` microservice illustrates when the food and beverages are ready to be served. It consumes the `READY` order from the `Kitchen` and `Bar` microservices. Once the order is served, the waitstaff can mark the order as `COMPLETED` and the status is sent back to the `Status` microservice as a message.
 
-The `Status` microservice receives status updates and provides queries for the waiter. All the orders are persisted here. Because persisting data is not the focus of this guide, the `Status` microservice simply uses a Map object to store the data.
+The `Status` microservice receives status updates and provides queries for the waitstaff. All the orders are persisted here. Because persisting data is not the focus of this guide, the `Status` microservice simply uses a Map object to store the data.
 
 // =================================================================================================
 // Prerequisites
@@ -80,6 +80,8 @@ Install Docker by following the instructions on the official https://docs.docker
 include::{common-includes}/gitclone.adoc[]
 
 == MicroProfile Reactive Messaging Acknowledgement Strategies
+
+image::reactive-messaging-keyconcepts.png[Reactive key concepts,align="center"]
 
 MicroProfile Reactive Messaging Acknowledgement ensures that in case of any system failure, no messages are lost. Messaging system like Apache Kafka differentiates between when a message is being delivered to a system and the processing of that message by that system being complete. If the system goes down, any messages which have been sent but not processed completely can then be sent again. Reactive messaging applications implement this using message acknowledgements.
 
@@ -184,7 +186,7 @@ For the `MANUAL` acknowledgement, transiting data needs to be wrapped in a `Mess
 
 == Building the application
 
-You will build and run the `Order`, `Kitchen`, `Bar`, `ServingWindow`, `Status`, and `OpenLibertyCafe` microservices in Docker containers.
+You will build and run the `Bar`, `Kitchen`, `Order`, `OpenLibertyCafe`, `ServingWindow`, and `Status` microservices in Docker containers.
 
 Start your Docker environment.
 
@@ -206,12 +208,12 @@ Run the following commands to containerize the microservices:
 
 [role='command']
 ```
-docker build -t kitchen:1.0-SNAPSHOT kitchen/.
 docker build -t bar:1.0-SNAPSHOT bar/.
-docker build -t servingwindow:1.0-SNAPSHOT servingWindow/.
-docker build -t order:1.0-SNAPSHOT order/.
-docker build -t status:1.0-SNAPSHOT status/.
+docker build -t kitchen:1.0-SNAPSHOT kitchen/.
 docker build -t openlibertycafe:1.0-SNAPSHOT openLibertyCafe/.
+docker build -t order:1.0-SNAPSHOT order/.
+docker build -t servingwindow:1.0-SNAPSHOT servingWindow/.
+docker build -t status:1.0-SNAPSHOT status/.
 ```
 
 Next, use the provided script to start the application in Docker containers. The script creates a network for the containers to communicate with each other. It also creates containers for Kafka, Zookeeper, and all of the microservices in the project.
@@ -308,13 +310,15 @@ Click `Execute` again and you will see the response with a `READY` status. Just 
 
 *Complete an Order*
 
-Make a `POST` request to the `/api/servingWindow/{orderId}` endpoint to complete an order. Expand the `POST` endpoint on the UI, click the *Try it out* button. Copy the following orderId into the text box, and then click the `Execute` button. The status for the `orderId 0002` is changed from `READY` to `COMPLETED` and the updated status is cascaded to the `Order` microservice.
+Make a `POST` request to the `/api/servingWindow/{orderId}` endpoint to complete an order. Expand the `POST` endpoint on the UI, click the *Try it out* button. Copy the following orderId into the text box, and then click the `Execute` button.
  
 [source, role='command']
 ----
 
 0002
 ----
+
+The status for the `orderId 0002` is changed from `READY` to `COMPLETED` and the updated status is cascaded to the `Status` microservice.
 
 Then, make a `GET` request to the `/api/status` endpoint again and verify that the status for the order with an `orderId` of `0002` is now labelled as `COMPLETED`.
 
@@ -370,7 +374,7 @@ Learn more about MicroProfile.
 
 https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html[View the MicroProfile Reactive Messaging Specification^]
 
-https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/apidocs/  [View the MicroProfile Reactive Messaging Javadoc^]
+https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/apidocs/[View the MicroProfile Reactive Messaging Javadoc^]
 
 https://openliberty.io/docs/ref/microprofile[View the MicroProfile API^]
 
