@@ -38,6 +38,12 @@ You will learn how to acknowledge messages using MicroProfile Reactive Messaging
 Temporal decoupling of services in a microservice-based architecture can be achieved using asynchronous communication. MicroProfile Reactive Messaging provides a way to build systems of microservices advocating responsiveness, location transparency, elasticity, resiliency to failure and temporal decoupling. This helps in enforcing asynchronous message passing between the different parts of the system. See
 https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_microprofile_reactive_messaging[ MicroProfile Reactive Messaging Specification^] for more information.
 
+To learn more about the MicroProfile Reactive Messaging, read https://draft-guides.mybluemix.net/guides/microprofile-reactive-messaging.html[Creating asynchronous reactive microservices using MicroProfile Reactive Messaging].
+
+=== What is MicroProfile Reactive Messaging acknowledgement?
+
+MicroProfile Reactive Messaging Acknowledgement ensures that in case of any system failure, no messages are lost. Messaging system like Apache Kafka differentiates between when a message is being delivered to a system and the processing of that message by that system being complete. If the system goes down, any messages which have been sent but not processed completely can then be sent again. Reactive messaging applications implement this using message acknowledgements.
+
 === What is Kafka?
 
 https://kafka.apache.org/[Apache Kafka^] is a stream-processing platform that manages communication in distributed systems. Communication is message-oriented, and follows the publish-subscribe model. Kafka allows for real-time stream processing and distributed, replicated storage of streams and messages. A Kafka producer is a client or a program, which produces the message and pushes them to a topic. A Kafka consumer is a client or a program, which consumes the published messages from a topic.
@@ -83,8 +89,6 @@ include::{common-includes}/gitclone.adoc[]
 
 == MicroProfile Reactive Messaging Acknowledgement Strategies
 
-MicroProfile Reactive Messaging Acknowledgement ensures that in case of any system failure, no messages are lost. Messaging system like Apache Kafka differentiates between when a message is being delivered to a system and the processing of that message by that system being complete. If the system goes down, any messages which have been sent but not processed completely can then be sent again. Reactive messaging applications implement this using message acknowledgements.
-
 MicroProfile Reactive Messaging acknowledgement consists of mainly four strategies namely `NONE`, `PRE_PROCESSING` , `POST_PROCESSING` and `MANUAL`.
 Acknowledgement is an important part of message processing. Messages are either acknowledged explicitly, or implicitly by the MicroProfile Reactive Messaging implementation.
 
@@ -93,7 +97,7 @@ Default acknowledgement depends on the method signature. Each method signature i
 
 Different defaults and supported acknowledgement for each supported signature could be found at the https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[Messaging acknowledgement^] table of the specification.
 
-Methods only annotated with @Outgoing do not support acknowledgement as they don’t receive an input Message.
+Methods annotated with only `@Outgoing` do not support acknowledgement as they don’t receive any incoming `Message`.
 
 === MicroProfile Reactive Messaging NONE Acknowledgement strategy
 
