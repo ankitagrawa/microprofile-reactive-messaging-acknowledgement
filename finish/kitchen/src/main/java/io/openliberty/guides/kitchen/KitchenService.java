@@ -65,11 +65,11 @@ public class KitchenService {
     // end::initFoodOrder[]
 
     private Order prepareOrder(Order order) {
-            prepare(10);
-            Order inProgressOrder = order.setStatus(Status.IN_PROGRESS);
-            logger.info("Order " + order.getOrderId() + " is IN PROGRESS");
-            logger.info(order.toString());
-            return inProgressOrder;
+        prepare(10);
+        Order inProgressOrder = order.setStatus(Status.IN_PROGRESS);
+        logger.info("Order " + order.getOrderId() + " is IN PROGRESS");
+        logger.info(order.toString());
+        return inProgressOrder;
     }
 
     private void prepare(int sleepTime) {

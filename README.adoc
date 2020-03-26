@@ -12,10 +12,10 @@
 :page-releasedate: 2020-04-13
 :page-guide-category: microprofile
 :page-essential: false
-:page-description: Learn various MicroProfile Reactive Messaging acknowledgement strategies available to acknowledge messages.
+:page-description: Learn how to use MicroProfile Reactive Messaging acknowledgement strategies to acknowledge messages.
 :guide-author: Open Liberty
 :page-tags: ['MicroProfile', 'Jakarta EE', 'Microservices']
-:page-related-guides: ['containerize']
+:page-related-guides: ['microprofile-reactive-messaging','reactive-messaging-sse','reactive-service-testing','microprofile-rest-client-async','containerize']
 :page-permalink: /guides/{projectid}
 :imagesdir: /img/guide/{projectid}
 :page-seo-title: Creating a MicroProfile Reactive Messaging REST service with different acknowledgement strategies
@@ -91,9 +91,9 @@ Acknowledgement is an important part of message processing. Messages are either 
 `@Acknowledgement` for the `@Incoming` messages is controlled by the `org.eclipse.microprofile.reactive.messaging.Acknowledgment` annotation.
 Default acknowledgement depends on the method signature. Each method signature implements different acknowledgement policies. If the Acknowledgment annotation is not set, the default policy is applied.
 
-Different defaults and supported acknowledgement for each supported signature could be found https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[here^] in this table.
+Different defaults and supported acknowledgement for each supported signature could be found at the https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[Messaging acknowledgement^] table of the specification.
 
-NOTE : Method only annotated with @Outgoing do not support acknowledgement as they don’t receive an input Message.
+Methods only annotated with @Outgoing do not support acknowledgement as they don’t receive an input Message.
 
 === MicroProfile Reactive Messaging NONE Acknowledgement strategy
 
@@ -119,7 +119,7 @@ include::finish/bar/src/main/java/io/openliberty/guides/bar/BarService.java[]
 
 If the order is an item of drink, `Bar` service receives an order on the [hotspot=bevOrderConsume file=0]`@Incoming("beverageOrderConsume")` channel, processes it in [hotspot=initBevOrder file=0]`receiveBeverageOrder()` method and sends back an `IN_PROGRESS` status on the [hotspot=bevOrderPublishInter file=0]`@Outgoing("beverageOrderPublishStatus")` channel to Kafka over MicroProfile Reactive Messaging channels. After a while, a `READY` status will be sent to the [hotspot=bevOrder file=0]`@Outgoing("beverageOrderPublishStatus")` channel.
 
-The [hotspot=initBevOrder file=0]`receiveBeverageOrder()` method in Bar microservice annotated with [hotspot=ackPreProcessing file=0]`PRE_PROCESSING` acknowledgement strategy matches the signature 
+The [hotspot=initBevOrder file=0]`receiveBeverageOrder()` method in Bar microservice matches the following signature.
 
 [source, role="no_copy"]
 ----
@@ -128,7 +128,7 @@ The [hotspot=initBevOrder file=0]`receiveBeverageOrder()` method in Bar microser
 O method(I payload)
 ----
 
-Based on the table mentioned https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[here^] , the default acknowledgement strategy would be `POST_PROCESSING`. It means that the messages will be acknowledged when the annotated method executes completely. However when we change the strategy to `PRE_PROCESSING`, the incoming message will be acknowledged even before the annotated method is called. It also means that the acknowledgment of the outgoing message would not acknowledge the incoming message anymore, as it’s already acknowledged. So if the service goes down when the message is being processed, the kafka won't resend the message and the message would be lost.
+Based on the table mentioned in the https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[specification^] , the default acknowledgement strategy would be `POST_PROCESSING`. It means that the messages will be acknowledged when the annotated method executes completely. However when we change the strategy to [hotspot=ackPreProcessing file=0]`PRE_PROCESSING`, the incoming message will be acknowledged even before the annotated method is called. It also means that the acknowledgment of the outgoing message would not acknowledge the incoming message anymore, as it’s already acknowledged. In case, the service goes down when the message is being processed, the Kafka won't resend the message if the service is restored and the message would be lost. That's because the Kafka already processed that message.
 
 === Building the Kitchen microservice with POST_PROCESSING Acknowledgement strategy
 
@@ -150,9 +150,9 @@ include::finish/kitchen/src/main/java/io/openliberty/guides/kitchen/KitchenServi
 
 If the order is an item of food, `Kitchen` service receives an order on the [hotspot=foodOrderConsume file=0]`@Incoming("foodOrderConsume")` channel, processes it in [hotspot=initFoodOrder file=0]`receiveFoodOrder()` method and sends back an `IN_PROGRESS` status on the [hotspot=foodOrderPublishIntermediate file=0]`@Outgoing("foodOrderPublishStatus")` channel to Kafka over MicroProfile Reactive Messaging channels. After a while, a `READY` status will be sent to the [hotspot=foodOrder file=0]`@Outgoing("foodOrderPublishStatus")` channel.
 
-The [hotspot=initFoodOrder file=0]`receiveFoodOrder()` method in Kitchen microservice annotated with [hotspot=ackPostProcessing file=0]`POST_PROCESSING` acknowledgement strategy indicates that the incoming message is acknowledged when the outgoing message is acknowledged. i.e. when the emitted data is acknowledged. So if the service goes down when the message is being processed, the kafka will resend the message and the message will not be lost.
+The [hotspot=initFoodOrder file=0]`receiveFoodOrder()` method in Kitchen microservice annotated with [hotspot=ackPostProcessing file=0]`POST_PROCESSING` acknowledgement strategy indicates that the incoming message is acknowledged when the outgoing message is acknowledged. i.e. when the emitted data is acknowledged. In case, the service goes down when the message is being processed, the kafka will resend the message and the message will not be lost.
 
-Check the https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[specification^] to see whether reactive messaging does `PRE_PROCESSING` or `POST_PROCESSING` message acknowledgements for your method. If it does `PRE_PROCESSING` consider changing to `POST_PROCESSING` if you don't want message to be lost.
+Check the https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[specification^] to see whether reactive messaging does `PRE_PROCESSING` or `POST_PROCESSING` message acknowledgements for your method. If it does `PRE_PROCESSING` consider changing to `POST_PROCESSING` based on your application need.
 
 === Building the Status microservice with MANUAL Acknowledgement strategy
 
