@@ -22,7 +22,7 @@
 :page-seo-description: A tutorial on how to acknowledge a message in Open Liberty using MicroProfile Reactive Messaging and their comparison
 :common-includes: https://raw.githubusercontent.com/OpenLiberty/guides-common/dev
 :source-highlighter: prettify
-= Acknowledging asynchronous messages using MicroProfile Reactive Messaging acknowledgement strategies
+= Acknowledging messages using MicroProfile Reactive Messaging acknowledgement strategies
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website].   
@@ -81,14 +81,12 @@ include::{common-includes}/gitclone.adoc[]
 
 == MicroProfile Reactive Messaging Acknowledgement Strategies
 
-MicroProfile Reactive Messaging Acknowledgement ensures that in case of any system failure, no messages are lost. Messaging system like Apache Kafka differentiates between when a message is being delivered to a system as opposed to been processed completely. If the system goes down, any messages which have been sent but not processed completely can then be sent again. Reactive messaging applications implement this using message acknowledgements.
+MicroProfile Reactive Messaging Acknowledgement ensures that in case of any system failure, no messages are lost. Messaging system like Apache Kafka differentiates between when a message is being delivered to a system and the processing of that message by that system being complete. If the system goes down, any messages which have been sent but not processed completely can then be sent again. Reactive messaging applications implement this using message acknowledgements.
 
 MicroProfile Reactive Messaging acknowledgement consists of mainly four strategies namely `NONE`, `PRE_PROCESSING` , `POST_PROCESSING` and `MANUAL`.
-
 Acknowledgement is an important part of message processing. Messages are either acknowledged explicitly, or implicitly by the MicroProfile Reactive Messaging implementation.
 
 `@Acknowledgement` for the `@Incoming` messages is controlled by the `org.eclipse.microprofile.reactive.messaging.Acknowledgment` annotation.
-
 Default acknowledgement depends on the method signature. Each method signature implements different acknowledgement policies. If the Acknowledgment annotation is not set, the default policy is applied.
 
 Different defaults and supported acknowledgement for each supported signature could be found https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[here^] in this table.
@@ -97,7 +95,7 @@ NOTE : Method only annotated with @Outgoing do not support acknowledgement as th
 
 === MicroProfile Reactive Messaging NONE Acknowledgement strategy
 
-If the acknowledgement strategy is set to `NONE`, no acknowledgment will be performed. The `NONE` strategy indicates that the incoming message is not acknowledged and the acknowledgment of the outgoing message would not acknowledge the incoming message anymore. The `NONE` strategy may be used for protocols that do not support message acknowledgment.
+If the acknowledgement strategy is set to `NONE`, no acknowledgment will be performed. The `NONE` strategy indicates that the incoming message is not acknowledged and the acknowledgment of the outgoing message would not acknowledge the incoming message anymore. The `NONE` strategy may be used for the protocols that do not support message acknowledgment.
 
 === Building the Bar microservice with PRE_PROCESSING Acknowledgement strategy
 
@@ -130,59 +128,59 @@ O method(I payload)
 
 Based on the above mentioned table, the default acknowledgement strategy would be `POST_PROCESSING`. It means that the messages will be acknowledged when the annotated method executes completely. However when we change the strategy to `PRE_PROCESSING`, the incoming message will be acknowledged even before the annotated method is called. It also means that the acknowledgment of the outgoing message would not acknowledge the incoming message anymore, as it’s already acknowledged. So if the service goes down when the message is being processed, the kafka won't resend the message and the message would be lost.
 
-=== Building the Kitchen microservice with POST_PROCESSING Acknowledgement strategy
+// === Building the Kitchen microservice with POST_PROCESSING Acknowledgement strategy
 
-If the acknowledgement strategy is set to `POST_PROCESSING`, the Reactive Messaging implementation acknowledges the message after the annotated method or processing is executed. When dealing with payloads, the `POST_PROCESSING` strategy is the default strategy. 
+// If the acknowledgement strategy is set to `POST_PROCESSING`, the Reactive Messaging implementation acknowledges the message after the annotated method or processing is executed. When dealing with payloads, the `POST_PROCESSING` strategy is the default strategy. 
 
-If an `@Incoming` annotated method has an acknowledgement strategy defined as `@Acknowledgment(Acknowledgment.Strategy.POST_PROCESSING)`, the Reactive Messaging implementation is responsible for the acknowledgement of the message.
+// If an `@Incoming` annotated method has an acknowledgement strategy defined as `@Acknowledgment(Acknowledgment.Strategy.POST_PROCESSING)`, the Reactive Messaging implementation is responsible for the acknowledgement of the message.
 
-//Kitchen
-[role="code_command hotspot file=0", subs="quotes"]
-----
-#Replace the `KitchenService` class.#
-`kitchen/src/main/java/io/openliberty/guides/kitchen/KitchenService.java`
-----
-KitchenService.java
-[source, Java, linenums, role='code_column hide_tags=copyright']
-----
-include::finish/kitchen/src/main/java/io/openliberty/guides/kitchen/KitchenService.java[]
-----
+// //Kitchen
+// [role="code_command hotspot file=0", subs="quotes"]
+// ----
+// #Replace the `KitchenService` class.#
+// `kitchen/src/main/java/io/openliberty/guides/kitchen/KitchenService.java`
+// ----
+// KitchenService.java
+// [source, Java, linenums, role='code_column hide_tags=copyright']
+// ----
+// include::finish/kitchen/src/main/java/io/openliberty/guides/kitchen/KitchenService.java[]
+// ----
 
-If the order is an item of food, `Kitchen` service receives an order on the [hotspot=foodOrderConsume file=0]`@Incoming("foodOrderConsume")` channel, processes it in [hotspot=initFoodOrder file=0]`receiveFoodOrder()` method and sends back an `IN_PROGRESS` status on the [hotspot=foodOrderPublishIntermediate file=0]`@Outgoing("foodOrderPublishStatus")` channel to Kafka over MicroProfile Reactive Messaging channels. After a while, a `READY` status will be sent to the [hotspot=foodOrder file=0]`@Outgoing("foodOrderPublishStatus")` channel.
+// If the order is an item of food, `Kitchen` service receives an order on the [hotspot=foodOrderConsume file=0]`@Incoming("foodOrderConsume")` channel, processes it in [hotspot=initFoodOrder file=0]`receiveFoodOrder()` method and sends back an `IN_PROGRESS` status on the [hotspot=foodOrderPublishIntermediate file=0]`@Outgoing("foodOrderPublishStatus")` channel to Kafka over MicroProfile Reactive Messaging channels. After a while, a `READY` status will be sent to the [hotspot=foodOrder file=0]`@Outgoing("foodOrderPublishStatus")` channel.
 
-The [hotspot=initFoodOrder file=0]`receiveFoodOrder()` method in Kitchen microservice annotated with [hotspot=ackPostProcessing file=0]`POST_PROCESSING` acknowledgement strategy indicates that the incoming message is acknowledged when the outgoing message is acknowledged. i.e. when the emitted data is acknowledged. So if the service goes down when the message is being processed, the kafka will resend the message and the message will not be lost.
+// The [hotspot=initFoodOrder file=0]`receiveFoodOrder()` method in Kitchen microservice annotated with [hotspot=ackPostProcessing file=0]`POST_PROCESSING` acknowledgement strategy indicates that the incoming message is acknowledged when the outgoing message is acknowledged. i.e. when the emitted data is acknowledged. So if the service goes down when the message is being processed, the kafka will resend the message and the message will not be lost.
 
-Check the https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[specification^] to see whether reactive messaging does `PRE_PROCESSING` or `POST_PROCESSING` message acknowledgements for your method. If it does `PRE_PROCESSING` consider changing to `POST_PROCESSING` if you don't want message to be lost.
+// Check the https://download.eclipse.org/microprofile/microprofile-reactive-messaging-1.0/microprofile-reactive-messaging-spec.html#_message_acknowledgement[specification^] to see whether reactive messaging does `PRE_PROCESSING` or `POST_PROCESSING` message acknowledgements for your method. If it does `PRE_PROCESSING` consider changing to `POST_PROCESSING` if you don't want message to be lost.
 
-=== Building the Status microservice with MANUAL Acknowledgement strategy
+// === Building the Status microservice with MANUAL Acknowledgement strategy
 
-If the acknowledgement strategy is set to `MANUAL`, a user or a developer is responsible for the acknowledgement. It can be achieved by calling the `Message.ack()` method, so that the Reactive Messaging implementation does not apply implicit acknowledgement.
+// If the acknowledgement strategy is set to `MANUAL`, a user or a developer is responsible for the acknowledgement. It can be achieved by calling the `Message.ack()` method, so that the Reactive Messaging implementation does not apply implicit acknowledgement.
 
-//status
-[role="code_command hotspot file=1", subs="quotes"]
-----
-#Replace the `StatusResource` class.#
-`status/src/main/java/io/openliberty/guides/status/StatusResource.java`
-----
+// //status
+// [role="code_command hotspot file=1", subs="quotes"]
+// ----
+// #Replace the `StatusResource` class.#
+// `status/src/main/java/io/openliberty/guides/status/StatusResource.java`
+// ----
 
-StatusResource.java
-[source, Java, linenums, role='code_column hide_tags=copyright']
-----
-include::finish/status/src/main/java/io/openliberty/guides/status/StatusResource.java[]
-----
+// StatusResource.java
+// [source, Java, linenums, role='code_column hide_tags=copyright']
+// ----
+// include::finish/status/src/main/java/io/openliberty/guides/status/StatusResource.java[]
+// ----
 
-status/microprofile-config.properties
-[source, Text, linenums, role='code_column hide_tags=copyright']
-----
-include::finish/status/src/main/resources/META-INF/microprofile-config.properties[]
-----
+// status/microprofile-config.properties
+// [source, Text, linenums, role='code_column hide_tags=copyright']
+// ----
+// include::finish/status/src/main/resources/META-INF/microprofile-config.properties[]
+// ----
 
-The `Status` microservice receives the message from the `Bar`, `Kitchen`, `Order`, and `ServingWindow` microservices over the [hotspot=updateStatus file=1]`@Incoming("updateStatus")` channel with its properties defined in the [hotspot=updateStatus file=2]`microprofile-config.properties`.
+// The `Status` microservice receives the message from the `Bar`, `Kitchen`, `Order`, and `ServingWindow` microservices over the [hotspot=updateStatus file=1]`@Incoming("updateStatus")` channel with its properties defined in the [hotspot=updateStatus file=2]`microprofile-config.properties`.
 
-The [hotspot=updateStatusMethod file=1]`updateStatus()` method in Status microservice annotated with [hotspot=ackManual file=1]`MANUAL` acknowledgement strategy 
-indicates that the incoming message acknowledgement is managed by the user code. The [hotspot=manualAckUser file=1]`order.ack()` method acknowledges the message once the method completes all it's processing.
+// The [hotspot=updateStatusMethod file=1]`updateStatus()` method in Status microservice annotated with [hotspot=ackManual file=1]`MANUAL` acknowledgement strategy 
+// indicates that the incoming message acknowledgement is managed by the user code. The [hotspot=manualAckUser file=1]`order.ack()` method acknowledges the message once the method completes all it's processing.
 
-For the `MANUAL` acknowledgement, transiting data needs to be wrapped in a `Message`. The `Message` class provides metadata and also allows messages to be acknowledged.
+// For the `MANUAL` acknowledgement, transiting data needs to be wrapped in a `Message`. The `Message` class provides metadata and also allows messages to be acknowledged.
 
 == Building the application
 
